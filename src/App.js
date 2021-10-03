@@ -57,6 +57,7 @@ function App() {
   const dispatch = useDispatch();
   const blockchain = useSelector((state) => state.blockchain);
   const data = useSelector((state) => state.data);
+  (console.log(data.totalSupply));
   const [feedback, setFeedback] = useState("Maybe it's your lucky day.");
   const [claimingNft, setClaimingNft] = useState(false);
   const claimNFTs = (_amount) => {
@@ -104,7 +105,8 @@ function App() {
       <ScrollToTop />
       <Navbar />
         <ImgWrapper lightBg={false}> 
-          <ReactPlayer playing url='https://www.parkvilleautocinemas.xyz/2.webm' loop="true"></ReactPlayer>
+          <ReactPlayer playing url='/videos/2.webm' 
+          loop="true" controls></ReactPlayer>
         </ImgWrapper>
         <InfoRow black>
           <InfoColumn>
@@ -133,7 +135,7 @@ function App() {
             <Heading blueText="true">
               Buy your ethclusives!
             </Heading>
-            <Subtitle pinkColor>Enter the amount of Ethclusives you would like to purchase, remember if you are a whitelisted user you can buy up to 5 Ethclusives</Subtitle>
+            <Subtitle pinkColor>Enter the amount of Ethclusives you would like to buy, remember if you are a whitelisted user you can buy up to 5 Ethclusives</Subtitle>
             <Pinkcontainer Big PinkColor>
               <TextWrapper>
                 <TopLine>

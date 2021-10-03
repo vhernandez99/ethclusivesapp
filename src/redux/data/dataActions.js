@@ -37,12 +37,11 @@ export const fetchData = (account) => {
         .getState()
         .blockchain.smartContract.methods.cost()
         .call();
-
       dispatch(
         fetchDataSuccess({
           name,
           totalSupply,
-          cost,
+          cost,     
         })
       );
     } catch (err) {
