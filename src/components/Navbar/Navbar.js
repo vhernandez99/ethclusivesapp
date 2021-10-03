@@ -45,7 +45,7 @@ function Navbar() {
         <Nav>
           <NavbarContainer>
             <img src={logoGif}></img>
-            <img src={logoLetras}></img>
+            
             <MobileIcon onClick={handleClick}>
               {click ? <FaTimes /> : <FaBars />}
             </MobileIcon>

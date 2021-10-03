@@ -2,7 +2,7 @@ import styled from 'styled-components';
 
 export const InfoSec = styled.div`
   color: #fff;
-  padding: 160px 0;
+  padding: 10px 0;
   background: ${({ lightBg }) => (lightBg ? '#fff' : 'Black')};
 `;
 
@@ -41,9 +41,11 @@ export const TextWrapper = styled.div`
 `;
 
 export const ImgWrapper = styled.div`
-  max-width: 555px;
+
+  max-width: 555;
   display: flex;
-  justify-content: ${({ start }) => (start ? 'flex-start' : 'flex-end')};
+  justify-content: center;
+  align-items:flex-end;
 `;
 
 export const TopLine = styled.div`

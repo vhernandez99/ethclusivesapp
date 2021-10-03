@@ -56,7 +56,7 @@ function App() {
     if (_amount <= 0) {
       return;
     }
-    setFeedback("Minting your Nerdy Coder Clone...");
+    setFeedback("Minting your Ethclusive NFT...");
     setClaimingNft(true);
     blockchain.smartContract.methods
       .mint(blockchain.account, _amount)
@@ -68,24 +68,22 @@ function App() {
       })
       .once("error", (err) => {
         console.log(err);
-        setFeedback("Sorry, something went wrong please try again later.");
+        setFeedback("Sorry, something went wrong please try again.");
         setClaimingNft(false);
       })
       .then((receipt) => {
         setFeedback(
-          "WOW, you now own a Nerdy Coder Clone. go visit Opensea.io to view it."
+          "WOW, you now own a Etclusive NFT go visit Opensea.io to view it."
         );
         setClaimingNft(false);
         dispatch(fetchData(blockchain.account));
       });
   };
-
   const getData = () => {
     if (blockchain.account !== "" && blockchain.smartContract !== null) {
       dispatch(fetchData(blockchain.account));
     }
   };
-
   useEffect(() => {
     getData();
   }, [blockchain.account]);
@@ -96,14 +94,15 @@ function App() {
       <Navbar />
       <InfoSec lightBg={false}>
         <Container>
+          <ImgWrapper>
+          <Img src={logoLetras}/>
+          </ImgWrapper>
           <InfoRow>
             <InfoColumn>
               <TextWrapper>
                 <TopLine lightTopLine={true}>Drop day october 20</TopLine>
                 <Heading lightText={true}>Ethclusives</Heading>
-
-                
-                <Subtitle>{feedback}</Subtitle>
+                <Subtitle lightTextDesc={true}>{feedback}</Subtitle>
                 <Subtitle lightTextDesc={true}></Subtitle>
                 {blockchain.account === "" ||
                 blockchain.smartContract === null ? (
@@ -115,6 +114,8 @@ function App() {
                     Connect to Metamask
                   </Button>
                 ) : (
+                  <TextWrapper>
+                  <TopLine lightTopLine={true}>{data.totalSupply}/10,033 Ethclusives</TopLine>
                   <Button big fontBig primary="true"
                       disabled={claimingNft ? 1 : 0}
                       onClick={(e) => {
@@ -124,6 +125,9 @@ function App() {
                       }}>
                     {claimingNft ? "BUSY" : "BUY 1"}
                   </Button>
+                  </TextWrapper>
+
+                  
                 )}
               </TextWrapper>
             </InfoColumn>
