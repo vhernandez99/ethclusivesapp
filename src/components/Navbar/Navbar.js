@@ -77,7 +77,7 @@ function Navbar() {
           <NavbarContainer>
             <NavLogo>
             <img src={logoGif}></img>
-            <img src={logoLetras} height="80" width="300"/>
+            <img src={logoLetras} height="80" width="200"/>
             </NavLogo>
             <MobileIcon onClick={handleClick}>
               {click ? <FaTimes /> : <FaBars />}
@@ -90,7 +90,7 @@ function Navbar() {
               </NavItem> */}
               <NavItemBtn>
                 {button ? (
-                  <NavBtnLink to='/sign-up'>
+                  <NavBtnLink>
                     {blockchain.account === "" ||
                     blockchain.smartContract === null ?(
                     <img src={ connectButton} onClick={(e)=>{
