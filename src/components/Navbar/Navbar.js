@@ -9,6 +9,7 @@ import twitterIcono from '../../images/twitter.png'
 import connectButton from '../../images/connectButton.png'
 import connectedButton from '../../images/connectedButton.png'
 import { connect } from "../../redux/blockchain/blockchainActions";
+import { fetchData } from "../../redux/data/dataActions";
 //test
 import PropTypes from "prop-types";
 import styled from "styled-components";
@@ -50,7 +51,11 @@ function Navbar() {
 
   const handleClick = () => setClick(!click);
   const closeMobileMenu = () => setClick(false);
-
+  const getData = () => {
+    if (blockchain.account !== "" && blockchain.smartContract !== null) {
+      dispatch(fetchData(blockchain.account));
+    }
+  };
   const showButton = () => {
     if (window.innerWidth <= 960) {
       setButton(false);
@@ -91,6 +96,7 @@ function Navbar() {
                     <img src={ connectButton} onClick={(e)=>{
                       e.preventDefault();
                       dispatch(connect());
+                      getData();
                     }}></img>
                   ) : (
                     <img src={ connectedButton} onClick={(e)=>{
