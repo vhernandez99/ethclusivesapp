@@ -10,7 +10,7 @@ export const homeObjOne = {
     '',
   buttonLabel: 'Coming soon',
   imgStart: '',
-  img: require('../../images/1.png'),
+  // img: require('../../images/1.png'),
   alt: 'Credit Card',
   start: ''
 };
@@ -27,7 +27,7 @@ export const homeObjTwo = {
     "Once you've joined, our team of specialist will reach out to you and get you set up in minutes.",
   buttonLabel: 'Learn More',
   imgStart: '',
-  img: require('../../images/svg-2.svg'),
+  // img: require('../../images/svg-2.svg'),
   alt: 'Vault',
   start: ''
 };
@@ -45,7 +45,7 @@ export const homeObjThree = {
     "Their team is wonderful! I can't believe I didn't start working with them earlier.",
   buttonLabel: 'View Case Study',
   imgStart: 'start',
-  img: require('../../images/profile.jpg'),
+  // img: require('../../images/profile.jpg'),
   alt: 'Vault',
   start: 'true'
 };
@@ -62,7 +62,7 @@ export const homeObjFour = {
     'You will never have to worry about your information getting leaked. Our team of security experts will ensure your records are kept safe.',
   buttonLabel: 'Sign Up Now',
   imgStart: 'start',
-  img: require('../../images/svg-3.svg'),
+  // img: require('../../images/svg-3.svg'),
   alt: 'Vault',
   start: 'true'
 };
