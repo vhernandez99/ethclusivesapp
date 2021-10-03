@@ -92,18 +92,14 @@ function Navbar() {
                     <img src={ connectedButton} onClick={(e)=>{
                     }}></img>
                   )}
-
-                      
-                      
-
                     <NavLogo>
                       <InfoRow>
                       <InfoColumn>
                         <NavLogo>
-                        <img src={telegramIcono}  width="40"></img>
+                        <img src={telegramIcono}  width="35"></img>
                         </NavLogo>
                         <NavLogo>
-                        <img src={twitterIcono}  width="40"/>
+                        <img src={twitterIcono}  width="35"/>
                         </NavLogo>
                         
                       </InfoColumn>
