@@ -15,7 +15,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { connect } from "./redux/blockchain/blockchainActions";
 import { fetchData } from "./redux/data/dataActions";
 import ReactPlayer from 'react-player'
-import mainVideo from './images/2.mp4'
+
 import {
   InfoSec,
   InfoRow,
@@ -97,7 +97,7 @@ function App() {
       <InfoSec lightBg={false}>
         <Container> 
           <ImgWrapper>
-          <ReactPlayer url={mainVideo} playing="true" loop="true"></ReactPlayer>
+          <ReactPlayer playing url='vid.webm' loop="true"></ReactPlayer>
           </ImgWrapper>
           
         </Container>
