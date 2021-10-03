@@ -4,6 +4,15 @@ import { IconContext } from 'react-icons/lib';
 import { Button } from '../../globalStyles';
 import logoGif from '../../images/ethclusive.gif'
 import logoLetras from '../../images/LogoLetras.png'
+import telegramIcono from '../../images/telegram.png'
+import twitterIcono from '../../images/twitter.png'
+import connectButton from '../../images/connectButton.png'
+import connectedButton from '../../images/connectedButton.png'
+import { connect } from "../../redux/blockchain/blockchainActions";
+
+import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
+import { useDispatch, useSelector } from "react-redux";
+
 import {
   Nav,
   NavbarContainer,
@@ -17,8 +26,21 @@ import {
   NavLinks,
   NavBtnLink
 } from './Navbar.elements';
+import {
+  InfoSec,
+  InfoRow,
+  InfoColumn,
+  TextWrapper,
+  TopLine,
+  Heading,
+  Subtitle,
+  ImgWrapper,
+  Img
+} from '../../components/InfoSection/InfoSection.elements';
 
 function Navbar() {
+  const dispatch = useDispatch();
+  const blockchain = useSelector((state) => state.blockchain);
   const [click, setClick] = useState(false);
   const [button, setButton] = useState(true);
 
@@ -40,33 +62,55 @@ function Navbar() {
   window.addEventListener('resize', showButton);
 
   return (
-    <>
+    <Router>
       <IconContext.Provider value={{ color: '#fff' }}>
         <Nav>
           <NavbarContainer>
+            <NavLogo>
             <img src={logoGif}></img>
-            
+            <img src={logoLetras} height="80" width="300"/>
+            </NavLogo>
             <MobileIcon onClick={handleClick}>
               {click ? <FaTimes /> : <FaBars />}
             </MobileIcon>
             <NavMenu onClick={handleClick} click={click}>
-              <NavItem>
+              {/* <NavItem>
                 <NavLink href="https://t.me/Ethclusives">
-                  Telegram
+                  Connect to Metamask
                 </NavLink>
-              </NavItem>
-              <NavItem>
-                <NavLink href="https://twitter.com/Ethclusive_Art">Twitter</NavLink>
-              </NavItem>
-              <NavItem>
-                <NavLinks to='/products' onClick={closeMobileMenu}>
-                  Discord
-                </NavLinks>
-              </NavItem>
+              </NavItem> */}
               <NavItemBtn>
                 {button ? (
                   <NavBtnLink to='/sign-up'>
-                    <Button primary>Opensea</Button>
+                    {blockchain.account === "" ||
+                    blockchain.smartContract === null ?(
+                    <img src={ connectButton} onClick={(e)=>{
+                      e.preventDefault();
+                      dispatch(connect());
+                    }}></img>
+                  ) : (
+                    <img src={ connectedButton} onClick={(e)=>{
+                    }}></img>
+                  )}
+
+                      
+                      
+
+                    <NavLogo>
+                      <InfoRow>
+                      <InfoColumn>
+                        <NavLogo>
+                        <img src={telegramIcono}  width="40"></img>
+                        </NavLogo>
+                        <NavLogo>
+                        <img src={twitterIcono}  width="40"/>
+                        </NavLogo>
+                        
+                      </InfoColumn>
+                      
+                      </InfoRow>
+                    </NavLogo>
+                    
                   </NavBtnLink>
                 ) : (
                   <NavBtnLink to='/sign-up'>
@@ -80,7 +124,7 @@ function Navbar() {
           </NavbarContainer>
         </Nav>
       </IconContext.Provider>
-    </>
+    </Router>
   );
 }
 

@@ -94,9 +94,6 @@ function App() {
       <Navbar />
       <InfoSec lightBg={false}>
         <Container>
-          <ImgWrapper>
-          <Img src={logoLetras}/>
-          </ImgWrapper>
           <InfoRow>
             <InfoColumn>
               <TextWrapper>

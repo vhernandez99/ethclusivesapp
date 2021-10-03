@@ -27,12 +27,14 @@ export const NavbarContainer = styled(Container)`
 
 export const NavLogo = styled(Link)`
   color: #fff;
-  justify-self: flex-start;
+  justify-self: stretch;
   cursor: pointer;
   text-decoration: none;
   font-size: 2rem;
   display: flex;
-  align-items: center;
+  align-items: stretch;
+  margin-top:5px;
+  margin-bottom:5px;
 `;
 
 export const NavIcon = styled(FaMagento)`
