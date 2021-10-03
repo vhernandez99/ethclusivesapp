@@ -14,6 +14,8 @@ import logoLetras from './images/LogoLetras.png'
 import { useDispatch, useSelector } from "react-redux";
 import { connect } from "./redux/blockchain/blockchainActions";
 import { fetchData } from "./redux/data/dataActions";
+import ReactPlayer from 'react-player'
+import mainVideo from './images/2.webm'
 import {
   InfoSec,
   InfoRow,
@@ -93,47 +95,11 @@ function App() {
       <ScrollToTop />
       <Navbar />
       <InfoSec lightBg={false}>
-        <Container>
-          <InfoRow>
-            <InfoColumn>
-              <TextWrapper>
-                <TopLine lightTopLine={true}>Drop day october 20</TopLine>
-                <Heading lightText={true}>Ethclusives</Heading>
-                <Subtitle lightTextDesc={true}>{feedback}</Subtitle>
-                <Subtitle lightTextDesc={true}></Subtitle>
-                {blockchain.account === "" ||
-                blockchain.smartContract === null ? (
-                <Button big fontBig primary="true" onClick={(e)=>{
-                    e.preventDefault();
-                    dispatch(connect());
-                    getData();
-                  }}>
-                    Connect to Metamask
-                  </Button>
-                ) : (
-                  <TextWrapper>
-                  <TopLine lightTopLine={true}>{data.totalSupply}/10,033 Ethclusives</TopLine>
-                  <Button big fontBig primary="true"
-                      disabled={claimingNft ? 1 : 0}
-                      onClick={(e) => {
-                      e.preventDefault();
-                      claimNFTs(1);
-                      getData();
-                      }}>
-                    {claimingNft ? "BUSY" : "BUY 1"}
-                  </Button>
-                  </TextWrapper>
-
-                  
-                )}
-              </TextWrapper>
-            </InfoColumn>
-            <InfoColumn>
-              <ImgWrapper start="flex-start">
-                <Img src={logoGif} alt="credit card" />
-              </ImgWrapper>
-            </InfoColumn>
-          </InfoRow>
+        <Container> 
+          <ImgWrapper>
+          <ReactPlayer url={mainVideo} playing="true" loop="true"></ReactPlayer>
+          </ImgWrapper>
+          
         </Container>
       </InfoSec>
       <Switch>
