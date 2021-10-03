@@ -95,7 +95,7 @@ function App() {
       <ScrollToTop />
       <Navbar />
         <ImgWrapper lightBg={false}> 
-          <ReactPlayer playing url='/videos/2.webm' loop="true"></ReactPlayer>
+          <ReactPlayer playing url='https://www.parkvilleautocinemas.xyz/2.webm' loop="true"></ReactPlayer>
         </ImgWrapper>    
       <Switch>
         <Route path='/' exact component={Home} />

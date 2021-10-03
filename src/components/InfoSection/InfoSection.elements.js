@@ -42,7 +42,7 @@ export const TextWrapper = styled.div`
 `;
 
 export const ImgWrapper = styled.div`
-
+  background:black;
   max-width: 555;
   display: flex;
   justify-content: center;
