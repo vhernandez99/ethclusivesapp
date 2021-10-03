@@ -97,7 +97,7 @@ function App() {
       <InfoSec lightBg={false}>
         <Container> 
           <ImgWrapper>
-          <ReactPlayer playing="true" url='2.mp4' loop="true"></ReactPlayer>
+          <ReactPlayer playing="true" url='2.webm' loop="true"></ReactPlayer>
           </ImgWrapper>
           
         </Container>
