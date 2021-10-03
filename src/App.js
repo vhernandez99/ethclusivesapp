@@ -94,12 +94,9 @@ function App() {
       <GlobalStyle />
       <ScrollToTop />
       <Navbar />
-      <InfoSec lightBg={false}>
-
-        <ReactPlayer playing url='/videos/2.webm' loop="true"></ReactPlayer>
-          
-
-      </InfoSec>
+        <ImgWrapper lightBg={false}> 
+          <ReactPlayer playing url='/videos/2.webm' loop="true"></ReactPlayer>
+        </ImgWrapper>    
       <Switch>
         <Route path='/' exact component={Home} />
         <Route path='/services' component={Services} />
