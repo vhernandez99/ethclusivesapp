@@ -89,6 +89,7 @@ export const Img = styled.img`
 `;
 
 export const Heading = styled.h1`
+  
   padding:10px;
   font-size: 35px;
   line-height: 1.1;
