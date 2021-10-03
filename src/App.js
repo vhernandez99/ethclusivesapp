@@ -17,6 +17,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { connect } from "./redux/blockchain/blockchainActions";
 import { fetchData } from "./redux/data/dataActions";
 import ReactPlayer from 'react-player'
+import video from './images/2.webm'
 
 
 import {
@@ -105,7 +106,7 @@ function App() {
       <ScrollToTop />
       <Navbar />
         <ImgWrapper lightBg={false}> 
-          <ReactPlayer playing url='/videos/2.webm' 
+          <ReactPlayer playing url={video} 
           loop="true" controls></ReactPlayer>
         </ImgWrapper>
         <InfoRow black>
