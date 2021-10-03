@@ -14,7 +14,7 @@ import logoLetras from './images/LogoLetras.png'
 import { useDispatch, useSelector } from "react-redux";
 import { connect } from "./redux/blockchain/blockchainActions";
 import { fetchData } from "./redux/data/dataActions";
-import ReactPlayer from 'react-player'
+import ReactPlayer from 'react-player/file'
 
 import {
   InfoSec,
@@ -97,7 +97,7 @@ function App() {
       <InfoSec lightBg={false}>
         <Container> 
           <ImgWrapper>
-          <ReactPlayer playing="true" url='2.webm' loop="true"></ReactPlayer>
+          <ReactPlayer playing url='/videos/2.webm' controls loop="true"></ReactPlayer>
           </ImgWrapper>
           
         </Container>
