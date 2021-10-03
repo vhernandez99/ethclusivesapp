@@ -10,12 +10,10 @@ const GlobalStyle = createGlobalStyle`
 `;
 
 export const Container = styled.div`
-
   z-index: 1;
   width: 100%;
   height:100%;
   max-width: 1300px;
-
   margin-right: auto;
   margin-left: auto;
   padding-right:50px;
@@ -27,6 +25,27 @@ export const Container = styled.div`
     padding-left: 30px;
   }
 `;
+
+export const Pinkcontainer = styled.div`
+  border-width:0.1px;
+  border-radius:${({BorderSquare})=>(BorderSquare ? '20px' : '10px')};
+  background:${({PinkColor})=>(PinkColor ? '#FE8CED' : '')};
+  padding:${({BigPadding})=>(BigPadding ? '30px' : '10px')};
+  border-style: solid;
+  border-color: #FF11FA;
+  z-index: 1;
+  width: ${({Big})=>(Big ? '100%' : '75%')};
+  height:100%;
+  
+  max-width: 1300px;
+  //margin-right: auto;
+  //margin-left: auto;
+  @media screen and (max-width: 991px) {
+    padding-right: 30px;
+    padding-left: 30px;
+  }
+`;
+
 
 export const Button = styled.button`
   border-radius: 4px;
