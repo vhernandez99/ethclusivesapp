@@ -1,7 +1,8 @@
 import styled from 'styled-components';
 
 export const InfoSec = styled.div`
-  color: #fff;
+  top:0;
+  color: yellow;
   padding: 10px 0;
   background: ${({ lightBg }) => (lightBg ? '#fff' : 'Black')};
 `;

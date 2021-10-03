@@ -15,7 +15,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { connect } from "./redux/blockchain/blockchainActions";
 import { fetchData } from "./redux/data/dataActions";
 import ReactPlayer from 'react-player'
-import mainVideo from './images/2.webm'
+import mainVideo from './images/2.mp4'
 import {
   InfoSec,
   InfoRow,

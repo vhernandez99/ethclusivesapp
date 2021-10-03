@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect,Component } from 'react';
 import { FaBars, FaTimes } from 'react-icons/fa';
 import { IconContext } from 'react-icons/lib';
 import { Button } from '../../globalStyles';
@@ -9,6 +9,9 @@ import twitterIcono from '../../images/twitter.png'
 import connectButton from '../../images/connectButton.png'
 import connectedButton from '../../images/connectedButton.png'
 import { connect } from "../../redux/blockchain/blockchainActions";
+//test
+import PropTypes from "prop-types";
+import styled from "styled-components";
 
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 import { useDispatch, useSelector } from "react-redux";
@@ -39,6 +42,7 @@ import {
 } from '../../components/InfoSection/InfoSection.elements';
 
 function Navbar() {
+  
   const dispatch = useDispatch();
   const blockchain = useSelector((state) => state.blockchain);
   const [click, setClick] = useState(false);
