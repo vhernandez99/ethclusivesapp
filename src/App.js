@@ -95,12 +95,10 @@ function App() {
       <ScrollToTop />
       <Navbar />
       <InfoSec lightBg={false}>
-        <Container> 
-          <ImgWrapper>
-          <ReactPlayer playing url='/videos/2.webm' controls loop="true"></ReactPlayer>
-          </ImgWrapper>
+
+        <ReactPlayer playing url='/videos/2.webm' loop="true"></ReactPlayer>
           
-        </Container>
+
       </InfoSec>
       <Switch>
         <Route path='/' exact component={Home} />
