@@ -10,10 +10,7 @@ import connectButton from '../../images/connectButton.png'
 import connectedButton from '../../images/connectedButton.png'
 import { connect } from "../../redux/blockchain/blockchainActions";
 import { fetchData } from "../../redux/data/dataActions";
-//test
-import PropTypes from "prop-types";
-import styled from "styled-components";
-
+import { useHistory } from "react-router-dom";
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 import { useDispatch, useSelector } from "react-redux";
 
@@ -43,7 +40,7 @@ import {
 } from '../../components/InfoSection/InfoSection.elements';
 
 function Navbar() {
-  
+  const history = useHistory();
   const dispatch = useDispatch();
   const blockchain = useSelector((state) => state.blockchain);
   const [click, setClick] = useState(false);
@@ -76,8 +73,8 @@ function Navbar() {
         <Nav>
           <NavbarContainer>
             <NavLogo>
-            <img src={logoGif}></img>
-            <img src={logoLetras} height="80" width="200"/>
+            <img src={logoGif} width="80" ></img>
+            <img src={logoLetras} height="40" width="170"/>
             </NavLogo>
             <MobileIcon onClick={handleClick}>
               {click ? <FaTimes /> : <FaBars />}
@@ -111,9 +108,7 @@ function Navbar() {
                         <NavLogo>
                         <img src={twitterIcono}  width="35"/>
                         </NavLogo>
-                        
                       </InfoColumn>
-                      
                       </InfoRow>
                     </NavLogo>
                     
@@ -130,6 +125,7 @@ function Navbar() {
           </NavbarContainer>
         </Nav>
       </IconContext.Provider>
+      
     </Router>
   );
 }

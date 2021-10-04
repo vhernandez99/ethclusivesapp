@@ -28,7 +28,7 @@ export const Container = styled.div`
 
 export const Pinkcontainer = styled.div`
   border-width:0.1px;
-  border-radius:${({BorderSquare})=>(BorderSquare ? '20px' : '10px')};
+  border-radius:${({BorderSquare})=>(BorderSquare ? '20px' : '8px')};
   background:${({PinkColor})=>(PinkColor ? '#FE8CED' : '')};
   padding:${({BigPadding})=>(BigPadding ? '30px' : '10px')};
   border-style: solid;
@@ -36,7 +36,7 @@ export const Pinkcontainer = styled.div`
   z-index: 1;
   width: ${({Big})=>(Big ? '100%' : '75%')};
   height:100%;
-  
+
   max-width: 1300px;
   //margin-right: auto;
   //margin-left: auto;

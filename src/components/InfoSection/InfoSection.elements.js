@@ -33,7 +33,7 @@ export const InfoColumn = styled.div`
 `;
 export const InfoColumnMintingQty = styled.div`
   background:black;
-  padding-right:25px;
+  padding-right:0px;
   flex: 1;
   max-width: 50%;
   flex-basis: 50%;
@@ -48,6 +48,7 @@ export const InfoColumnMintingQty = styled.div`
 export const TextWrapper = styled.div`
   max-width: 540px;
   padding-top: 0;
+  padding-bottom:15px;
  
 
   @media screen and (max-width: 768px) {
@@ -71,7 +72,7 @@ export const ImgWraperMargin = styled.div`
 `;
 
 export const TopLine = styled.div`
-  color: ${({ lightTopLine }) => (lightTopLine ? '#a9b3c1' : '#4B59F7')};
+  color: ${({textColor}) => (textColor ? `${textColor}` : 'white')};
   font-size: 18px;
   line-height: 16px;
   font-weight: 700;
@@ -90,11 +91,13 @@ export const Img = styled.img`
 
 export const Heading = styled.h1`
   
-  padding:10px;
+  padding-left: ${({ paddingLeft}) => (paddingLeft ? `${paddingLeft}px;`: '0px')};
+  padding-top:15px;
+  padding-bottom:15px;
   font-size: 35px;
   line-height: 1.1;
   font-weight: 600;
-  color: ${({ lightText,blueText }) => (lightText ? '#f7f8fa' : '#1c2237', blueText ? '#08FAF6': 'black')};
+  color: ${({ textColor}) => (textColor ? `${textColor}` : 'white')};
 `;
 
 export const Subtitle = styled.p`
