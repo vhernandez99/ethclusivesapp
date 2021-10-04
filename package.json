@@ -1,6 +1,6 @@
 {
   "name": "ethclusivesapp",
-  "homepage": "http://ethclusiveart.com/ethclusives",
+  "homepage": ".", 
   "version": "0.1.0",
   "private": true,
   "dependencies": {

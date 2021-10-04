@@ -10,7 +10,7 @@ ReactDOM.render(
   
     <Provider store={store}>
       <BrowserRouter>
-        <Game />
+        <App />
       </BrowserRouter>
 
     </Provider>,
