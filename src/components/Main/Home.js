@@ -2,12 +2,13 @@ import React,{useEffect, useState, useRef} from 'react';
 import ReactPlayer from 'react-player'
 import styled from "styled-components";
 import {Container, Button,Pinkcontainer } from '../../globalStyles';
-import minting from '/public/Images/minting.png'
-import mint from '/public/Images/images/mint.png'
-import logoGif from '/public/Images/Logo.gif'
-import logoLetras from '/public/Images/LogoLetras.png'
+import minting from '../../images/minting.png'
+import mint from '../../images/mint.png'
+import logoGif from '../../images/Logo.gif'
+import logoLetras from '../../images/LogoLetras.png'
 import { connect } from "../../redux/blockchain/blockchainActions";
 import { fetchData } from "../../redux/data/dataActions";
+
 import { useDispatch, useSelector } from "react-redux";
 import {
   InfoSec,
