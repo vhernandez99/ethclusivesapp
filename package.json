@@ -1,6 +1,6 @@
 {
   "name": "ethclusivesapp",
-  "homepage": ".", 
+  "homepage": "https://ethclusiveart.com/",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
@@ -10,6 +10,7 @@
     "all": "^0.0.0",
     "chai": "^4.3.4",
     "chai-as-promised": "^7.1.1",
+    "connect-history-api-fallback": "^1.6.0",
     "react": "^17.0.2",
     "react-canvas-draw": "^1.1.1",
     "react-chrome-dino": "^0.1.3",
@@ -21,8 +22,11 @@
     "react-router-dom": "^5.2.0",
     "react-scripts": "4.0.3",
     "react-signature-canvas": "^1.0.3",
+    "react-slick": "^0.28.1",
     "redux": "^4.1.1",
     "redux-thunk": "^2.3.0",
+    "save": "^2.4.0",
+    "slick-carousel": "^1.8.1",
     "styled-components": "^5.1.1",
     "web-vitals": "^1.0.1",
     "web3": "^1.5.1",

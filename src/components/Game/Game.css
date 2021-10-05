@@ -1,13 +1,24 @@
 * {
     padding: 0;
     margin: 0;
+    
 }
 
+.Main{
+    background: black;
+
+    
+}
+.ButtonRestart{
+    background: transparent;
+    color: pink;
+}
 .contenedor {
-    width: 100%;
+
+    width: 75%;
     height: 360px;
     margin: 0 auto;
-    
+    margin-top: 50px;
     position: relative;
 
     background: linear-gradient(#b7d6c7 0%, transparent 60%, transparent 80%,  #6d757e 100%) #ffe2d1;/*linear-gradient(#90ebff, white);*/
@@ -36,7 +47,7 @@
     left: 42px;
     z-index: 2;
 
-    background: url('../../images/Game/dino.png') repeat-x 0px 0px;
+    background: url('../../images/dino.png') repeat-x 0px 0px;
     background-size: 336px 84px;
     background-position-x: 0px;
 
@@ -100,8 +111,14 @@
     height: 48px;
     position: absolute;
     z-index: 1;
-    
     background: url('../../images/Game/moneda.png') no-repeat center center;
+}
+.moneda2{
+    width: 48px;
+    height: 48px;
+    position: absolute;
+    z-index: 1;
+    background: url('../../images/Game/moneda2.png') no-repeat center center;
 }
 
 .score{
@@ -121,7 +138,7 @@
 }
 
 .game-over{
-    display: none;
+    display: flex;
 
     width: 100%;
     position: absolute;

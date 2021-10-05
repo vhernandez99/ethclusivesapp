@@ -18,6 +18,7 @@ export const Container = styled.div`
   margin-left: auto;
   padding-right:50px;
   padding-left: 50px;
+  background:${({ BackgroundColor}) => (BackgroundColor ? `${BackgroundColor}` : 'Red')};
   
 
   @media screen and (max-width: 991px) {
@@ -47,7 +48,10 @@ export const Pinkcontainer = styled.div`
 `;
 
 
+
+
 export const Button = styled.button`
+  
   border-radius: 4px;
   background: ${({ primary }) => (primary ? '#4B59F7' : '#0467FB')};
   white-space: nowrap;

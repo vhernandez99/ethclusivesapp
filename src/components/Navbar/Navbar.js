@@ -69,7 +69,7 @@ function Navbar() {
 
   return (
     <Router>
-      <IconContext.Provider value={{ color: '#fff' }}>
+      <IconContext.Provider value={{ color: 'black' }}>
         <Nav>
           <NavbarContainer>
             <NavLogo>

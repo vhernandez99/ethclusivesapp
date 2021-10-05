@@ -10,7 +10,7 @@ export const InfoSec = styled.div`
 export const InfoRow = styled.div`
   background: ${({ black }) => (black ? 'black' : 'transparent')};
   display: flex;
-  margin: 0 -15px -15px -15px;
+  
   flex-wrap: wrap;
   align-items: center;
   flex-direction: ${({ imgStart }) => (imgStart ? 'row-reverse' : 'row')};
@@ -57,11 +57,18 @@ export const TextWrapper = styled.div`
 `;
 
 export const ImgWrapper = styled.div`
-  background:black;
+  background: ${({ BackgroundColor}) => (BackgroundColor ? `${BackgroundColor}` : 'transparent')};
   max-width: 555;
   display: flex;
-  justify-content: center;
+  margin:${({Margin})=>(Margin ? `${Margin}px` : '0px')};
+  margin-left:${({MarginLeft})=>(MarginLeft ? `${MarginLeft}px` : '0px')};
+  margin-bottom:${({MarginBottom})=>(MarginBottom ? `${MarginBottom}px` : '0px')};
+  margin-top:${({MarginTop})=>(MarginTop ? `${MarginTop}px` : '0px')};
+  margin-right:${({MarginRight})=>(MarginRight ? `${MarginRight}px` : '0px')};
+  justify-content:${({ JustifyContent}) => (JustifyContent ? `${JustifyContent}` : 'Center')};
   align-items:flex-end;
+  z-index: ${({Zindex})=>(Zindex ? `${Zindex}`: '0')};
+  position:${({Position})=>(Position?`${Position}` : 'unset')}
 `;
 export const ImgWraperMargin = styled.div`
   background:black;
@@ -99,6 +106,23 @@ export const Heading = styled.h1`
   font-weight: 600;
   color: ${({ textColor}) => (textColor ? `${textColor}` : 'white')};
 `;
+export const Input = styled.input.attrs(props => ({
+  // we can define static props
+  type: "number",
+  
+  // or we can define dynamic ones
+  size: props.size || "0.5em",
+}))`
+  color: palevioletred;
+  font-size: 1em;
+  border: 2px solid palevioletred;
+  border-radius: 3px;
+
+  /* here we use the dynamically computed prop */
+  margin: ${props => props.size};
+  padding: ${props => props.size};
+`;
+
 
 export const Subtitle = styled.p`
   //max-width: 440px;

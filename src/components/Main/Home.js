@@ -8,7 +8,7 @@ import logoGif from '../../images/Logo.gif'
 import logoLetras from '../../images/LogoLetras.png'
 import { connect } from "../../redux/blockchain/blockchainActions";
 import { fetchData } from "../../redux/data/dataActions";
-
+import Slider from "../ Slider/Slider";
 import { useDispatch, useSelector } from "react-redux";
 import {
   InfoSec,
@@ -21,9 +21,12 @@ import {
   Subtitle,
   ImgWrapper,
   ImgWraperMargin,
-  Img
+  Img,
+  Input
+
 } from '../InfoSection/InfoSection.elements';
 function Home() {
+  const[mintValue, SetMintValue] = useState(0);
   const dispatch = useDispatch();
   const blockchain = useSelector((state) => state.blockchain);
   const data = useSelector((state) => state.data);
@@ -66,7 +69,7 @@ function Home() {
   }, [blockchain.account]);
   return (
     <>
-      <ImgWrapper lightBg={false}> 
+      <ImgWrapper BackgroundColor="Black"> 
           <img src="https://ethclusiveart.com/files/intro.gif" 
           loop="true" controls></img>
         </ImgWrapper>
@@ -85,7 +88,7 @@ function Home() {
                       }
                       else{
                         e.preventDefault();
-                        claimNFTs(1);
+                        claimNFTs(mintValue);
                         getData();
                       }}}>
               </img>
@@ -98,7 +101,7 @@ function Home() {
             <Heading blueText >
               Buy your ethclusives!
             </Heading>
-            <Subtitle pinkColor>Enter the amount of Ethclusives you would like to buy, remember if you are a whitelisted user you can buy up to 5 Ethclusives!</Subtitle>
+            <Subtitle pinkColor>Enter the amount of Ethclusives you would like to buy, whitelisted users can mint up to 8 Ethclusives (presale and public sale)</Subtitle>
             </TextWrapper>
             <Pinkcontainer Big PinkColor>
               <TextWrapper>
@@ -117,11 +120,34 @@ function Home() {
                 </TopLine>
                 </InfoRow>
               </TextWrapper>
+              
+            </Pinkcontainer>
+            <br/>
+            <hr color="#FF11FA" />
+            <br/>
+            <Pinkcontainer Big PinkColor>
+              <TextWrapper>
+                <InfoRow>
+                <Input onChange={event=>SetMintValue(event.target.value)}>
+                    
+                </Input>
+                <TopLine textColor="Yellow">
+                  5 Ethclusives max
+                </TopLine>
+                </InfoRow>
+              </TextWrapper>
+              
             </Pinkcontainer>
             </Pinkcontainer>
           </InfoColumnMintingQty>
           
         </InfoRow>
+        <br/>
+        <Slider>
+          
+        </Slider>
+        
+
     </>
   );
 }

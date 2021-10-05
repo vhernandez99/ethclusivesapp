@@ -26,8 +26,6 @@ import {
     Img
   } from '../../components/InfoSection/InfoSection.elements';
     
-  
-  
   function SimpleNavbar(){
       return(
         <Nav>

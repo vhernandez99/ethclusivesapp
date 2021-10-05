@@ -4,10 +4,9 @@ import SimpleNavbar from '../../components/Navbar/SimpleNavbar'
 
 function GamePage(){
     return(
-        <>
-            <SimpleNavbar></SimpleNavbar>
-            <Game></Game>
-        </>
+       <Game>
+           
+       </Game>
     );
 }
 export default GamePage;
