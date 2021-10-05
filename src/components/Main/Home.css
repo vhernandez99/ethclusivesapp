@@ -4,3 +4,15 @@
 
     
 }
+.imgClass{
+
+width: 70%;
+height: 100%;
+max-height: 650px;
+max-height: 800px;
+object-fit: contain;
+@media screen max-width: 768px{
+    object-fit: contain;
+}
+}
+

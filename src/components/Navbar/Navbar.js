@@ -115,11 +115,18 @@ function Navbar() {
                     
                   </NavBtnLink>
                 ) : (
-                  <NavBtnLink to='/sign-up'>
+                  <InfoRow>
                     <Button onClick={closeMobileMenu} fontBig primary>
-                      SIGN UP
+                      Telegram
                     </Button>
-                  </NavBtnLink>
+                    &nbsp;
+                    <Button onClick={closeMobileMenu} fontBig primary>
+                      Twitter
+                    </Button>
+                  </InfoRow>
+                  
+                  
+                  
                 )}
               </NavItemBtn>
             </NavMenu>

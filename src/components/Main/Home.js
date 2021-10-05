@@ -70,9 +70,9 @@ function Home() {
   }, [blockchain.account]);
   return (
     <div className="main">
-      <ImgWrapper BackgroundColor="Black"> 
-          <img src="https://ethclusiveart.com/files/intro.gif" 
-          loop="true" controls></img>
+      <ImgWrapper>
+          <img src="https://ethclusiveart.com/files/intro.gif" className="imgClass"
+          loop="true"></img>
         </ImgWrapper>
         <InfoRow black>
           <InfoColumn>
@@ -116,20 +116,21 @@ function Home() {
                 <Heading>
                   ETH &nbsp; &nbsp;        
                 </Heading>
-                <TopLine textColor="Yellow">
+                <TopLine textColor="Yellow" >
                   {10033-Number(data.totalSupply)} remaining!
                 </TopLine>
                 </InfoRow>
               </TextWrapper>
               
             </Pinkcontainer>
+     
             <br/>
             <hr color="#FF11FA" />
             <br/>
             <Pinkcontainer Big PinkColor>
               <TextWrapper>
                 <InfoRow>
-                <Input onChange={event=>SetMintValue(event.target.value)}>
+                <Input onChange={event=>SetMintValue(event.target.value)} disabled={blockchain.account=== "" || blockchain.smartContract===null ? 1: 0}>
                     
                 </Input>
                 <TopLine textColor="Yellow">

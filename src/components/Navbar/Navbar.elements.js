@@ -44,7 +44,8 @@ export const NavIcon = styled(FaMagento)`
 
 export const MobileIcon = styled.div`
   display: none;
-
+  color:red;
+  background:white;
   @media screen and (max-width: 960px) {
     display: block;
     position: absolute;

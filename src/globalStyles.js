@@ -10,7 +10,6 @@ const GlobalStyle = createGlobalStyle`
 `;
 
 export const Container = styled.div`
-  
   z-index: 1;
   position: relative;
   width:${({ Width}) => (Width ? `${Width}%` : '100%')};

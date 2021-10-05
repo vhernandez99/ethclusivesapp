@@ -124,7 +124,7 @@ function VolumenSumergido() {
     }
 }
 function HandleKeyDown(ev){
-    if(ev.keyCode == 13){
+    if(ev.keyCode == 32){
         Saltar();
     }
 }
@@ -335,14 +335,13 @@ function IsCollision(a, b, paddingTop, paddingRight, paddingBottom, paddingLeft)
    
     </Container>
     
-    <Container Width="70" BackgroundColor="red">
+    <ImgWrapper >
     <button className="ButtonRestart" onClick={Reset}>Restart</button>
+    </ImgWrapper>
+    <ImgWrapper>
     <img src={Continue} onClick={() => history.push('/home')}></img>
     <img src={Click} width="50" Zindex="3"></img>
- 
-    
-   
-    </Container>
+    </ImgWrapper>
         
         
 

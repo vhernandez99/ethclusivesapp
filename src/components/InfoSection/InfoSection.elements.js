@@ -58,7 +58,7 @@ export const TextWrapper = styled.div`
 
 export const ImgWrapper = styled.div`
   background: ${({ BackgroundColor}) => (BackgroundColor ? `${BackgroundColor}` : 'transparent')};
-  max-width: 555;
+  
   display: flex;
   margin:${({Margin})=>(Margin ? `${Margin}px` : '0px')};
   margin-left:${({MarginLeft})=>(MarginLeft ? `${MarginLeft}px` : '0px')};
@@ -66,9 +66,22 @@ export const ImgWrapper = styled.div`
   margin-top:${({MarginTop})=>(MarginTop ? `${MarginTop}px` : '0px')};
   margin-right:${({MarginRight})=>(MarginRight ? `${MarginRight}px` : '0px')};
   justify-content:${({ JustifyContent}) => (JustifyContent ? `${JustifyContent}` : 'Center')};
-  align-items:flex-end;
+  align-items:center;
   z-index: ${({Zindex})=>(Zindex ? `${Zindex}`: '0')};
-  position:${({Position})=>(Position?`${Position}` : 'unset')}
+  position:${({Position})=>(Position?`${Position}` : 'relative')};
+  width:100%;
+
+
+  
+  
+  
+  @media screen and (max-width: 768px) {
+    max-width: 100%;
+    width:"20px";
+    flex-basis: 100%;
+    display: flex;
+    justify-content: center;
+  }
 `;
 export const ImgWraperMargin = styled.div`
   background:black;
@@ -79,6 +92,7 @@ export const ImgWraperMargin = styled.div`
 `;
 
 export const TopLine = styled.div`
+
   color: ${({textColor}) => (textColor ? `${textColor}` : 'white')};
   font-size: 18px;
   line-height: 16px;
