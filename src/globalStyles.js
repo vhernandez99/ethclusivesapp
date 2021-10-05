@@ -10,14 +10,16 @@ const GlobalStyle = createGlobalStyle`
 `;
 
 export const Container = styled.div`
+  
   z-index: 1;
-  width: 100%;
+  position: relative;
+  width:${({ Width}) => (Width ? `${Width}%` : '100%')};
   height:100%;
   max-width: 1300px;
   margin-right: auto;
   margin-left: auto;
-  padding-right:50px;
-  padding-left: 50px;
+  padding-left:${({ PaddingRight}) => (PaddingRight ? `${PaddingRight}px` : '50px')};
+  padding-left:${({ PaddingLeft}) => (PaddingLeft ? `${PaddingLeft}px` : '50px')};
   background:${({ BackgroundColor}) => (BackgroundColor ? `${BackgroundColor}` : 'Red')};
   
 

@@ -334,13 +334,16 @@ function IsCollision(a, b, paddingTop, paddingRight, paddingBottom, paddingLeft)
     <audio src={GameOverSound} class="audio-gameOver"></audio>
    
     </Container>
-        <ImgWrapper JustifyContent="End" MarginRight="140" BackgroundColor="Black">
-            <InfoRow>
-            <button className="ButtonRestart" onClick={Reset}>Restart</button>
-            <img src={Continue} onClick={() => history.push('/home')}></img>
-            <img src={Click} width="50" Zindex="3"></img>
-            </InfoRow>
-        </ImgWrapper>
+    
+    <Container Width="70" BackgroundColor="red">
+    <button className="ButtonRestart" onClick={Reset}>Restart</button>
+    <img src={Continue} onClick={() => history.push('/home')}></img>
+    <img src={Click} width="50" Zindex="3"></img>
+ 
+    
+   
+    </Container>
+        
         
 
     </div>

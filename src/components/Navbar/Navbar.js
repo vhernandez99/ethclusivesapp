@@ -73,7 +73,7 @@ function Navbar() {
         <Nav>
           <NavbarContainer>
             <NavLogo>
-            <img src={logoGif} width="80" ></img>
+            {/* <img src={logoGif} width="80" ></img> */}
             <img src={logoLetras} height="40" width="170"/>
             </NavLogo>
             <MobileIcon onClick={handleClick}>
@@ -99,9 +99,10 @@ function Navbar() {
                     <img src={ connectedButton} onClick={(e)=>{
                     }}></img>
                   )}
-                    <NavLogo>
-                      <InfoRow>
+
+
                       <InfoColumn>
+                        
                         <NavLogo>
                         <img src={telegramIcono}  width="35"></img>
                         </NavLogo>
@@ -109,8 +110,8 @@ function Navbar() {
                         <img src={twitterIcono}  width="35"/>
                         </NavLogo>
                       </InfoColumn>
-                      </InfoRow>
-                    </NavLogo>
+
+                 
                     
                   </NavBtnLink>
                 ) : (

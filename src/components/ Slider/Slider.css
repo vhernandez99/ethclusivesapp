@@ -14,7 +14,7 @@
 
 
 .slide img {
-  width: 80%;
+  width: 50%;
   margin: 0 auto;
   
 }
@@ -28,7 +28,7 @@
 }
 
 .activeSlide {
-  transform: scale(1.1);
+  transform: scale(1);
   opacity: 1;
 }
 

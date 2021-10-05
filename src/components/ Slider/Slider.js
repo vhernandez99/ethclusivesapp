@@ -1,14 +1,15 @@
 import "./Slider.css";
 import { useState } from "react";
 import Slider from "react-slick";
-import image1 from '../../images/1.png'
-import image2 from '../../images/2.jpeg'
-import image3 from '../../images/3.jpeg'
-import image4 from '../../images/4.jpeg'
-import image5 from '../../images/5.jpeg'
+import image1 from '../../images/Slider1.png'
+import image2 from '../../images/Slider2.png'
+import image3 from '../../images/Slider3.png'
+import image4 from '../../images/Slider4.png'
+import image5 from '../../images/Slider5.png'
+import image6 from '../../images/Slider6.png'
+import image7 from '../../images/Slider7.png'
 import { FaArrowRight, FaArrowLeft } from "react-icons/fa";
-
-const images = [image1, image2, image3, image4,image5];
+const images = [image1, image2, image3, image4,image5,image6,image7];
 
 function SliderC() {
   const NextArrow = ({ onClick }) => {

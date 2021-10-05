@@ -10,6 +10,7 @@ import { connect } from "../../redux/blockchain/blockchainActions";
 import { fetchData } from "../../redux/data/dataActions";
 import Slider from "../ Slider/Slider";
 import { useDispatch, useSelector } from "react-redux";
+import './Home.css'
 import {
   InfoSec,
   InfoRow,
@@ -68,7 +69,7 @@ function Home() {
     getData();
   }, [blockchain.account]);
   return (
-    <>
+    <div className="main">
       <ImgWrapper BackgroundColor="Black"> 
           <img src="https://ethclusiveart.com/files/intro.gif" 
           loop="true" controls></img>
@@ -143,12 +144,13 @@ function Home() {
           
         </InfoRow>
         <br/>
+        <br/>
         <Slider>
           
         </Slider>
         
 
-    </>
+    </div>
   );
 }
 

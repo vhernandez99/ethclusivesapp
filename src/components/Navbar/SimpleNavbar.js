@@ -31,7 +31,7 @@ import {
         <Nav>
             <NavbarContainer>
             <NavLogo>
-            <img src={logoGif}  width="80"></img>
+            {/* <img src={logoGif}  width="80"></img> */}
             <img src={logoLetras} height="40" width="170"/>
             </NavLogo>
             </NavbarContainer>
