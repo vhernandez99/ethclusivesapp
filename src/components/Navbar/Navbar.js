@@ -1,7 +1,7 @@
 import React, { useState, useEffect,Component } from 'react';
 import { FaBars, FaTimes } from 'react-icons/fa';
 import { IconContext } from 'react-icons/lib';
-import { Button } from '../../globalStyles';
+import { Button,Container,LinkA } from '../../globalStyles';
 import logoGif from '../../images/ethclusive.gif'
 import logoLetras from '../../images/LogoLetras.png'
 import telegramIcono from '../../images/telegram.png'
@@ -10,9 +10,10 @@ import connectButton from '../../images/connectButton.png'
 import connectedButton from '../../images/connectedButton.png'
 import { connect } from "../../redux/blockchain/blockchainActions";
 import { fetchData } from "../../redux/data/dataActions";
-import { useHistory } from "react-router-dom";
-import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
+import { Link, useHistory } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
+import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
+import './Navbar.css'
 
 import {
   Nav,
@@ -40,7 +41,7 @@ import {
 } from '../../components/InfoSection/InfoSection.elements';
 
 function Navbar() {
-  const history = useHistory();
+  
   const dispatch = useDispatch();
   const blockchain = useSelector((state) => state.blockchain);
   const [click, setClick] = useState(false);
@@ -68,26 +69,16 @@ function Navbar() {
   window.addEventListener('resize', showButton);
 
   return (
-    <Router>
-      <IconContext.Provider value={{ color: 'black' }}>
+<Router>
         <Nav>
           <NavbarContainer>
-            <NavLogo>
-            {/* <img src={logoGif} width="80" ></img> */}
-            <img src={logoLetras} height="40" width="170"/>
-            </NavLogo>
-            <MobileIcon onClick={handleClick}>
-              {click ? <FaTimes /> : <FaBars />}
-            </MobileIcon>
-            <NavMenu onClick={handleClick} click={click}>
-              {/* <NavItem>
-                <NavLink href="https://t.me/Ethclusives">
-                  Connect to Metamask
-                </NavLink>
-              </NavItem> */}
+            <ImgWrapper JustifyContent="Start"
+            WidthPercentage="0"> 
+            <img src={logoLetras} height="40" width="170" />
+            </ImgWrapper>
+            <NavMenu>
               <NavItemBtn>
-                {button ? (
-                  <NavBtnLink>
+                  <a>
                     {blockchain.account === "" ||
                     blockchain.smartContract === null ?(
                     <img src={ connectButton} onClick={(e)=>{
@@ -96,45 +87,28 @@ function Navbar() {
                       getData();
                     }}></img>
                   ) : (
-                    <img src={ connectedButton} onClick={(e)=>{
-                    }}></img>
+                    <img src={ connectedButton}></img>
                   )}
+                      </a>
+              </NavItemBtn>
 
-
-                      <InfoColumn>
-                        
-                        <NavLogo>
-                        <img src={telegramIcono}  width="35"></img>
-                        </NavLogo>
-                        <NavLogo>
-                        <img src={twitterIcono}  width="35"/>
-                        </NavLogo>
-                      </InfoColumn>
-
-                 
-                    
-                  </NavBtnLink>
-                ) : (
-                  <InfoRow>
-                    <Button onClick={closeMobileMenu} fontBig primary>
-                      Telegram
-                    </Button>
-                    &nbsp;
-                    <Button onClick={closeMobileMenu} fontBig primary>
-                      Twitter
-                    </Button>
-                  </InfoRow>
-                  
-                  
-                  
-                )}
+              <NavItemBtn >
+              <a href="https://twitter.com/Ethclusive_Art">
+                <img className="spring" Src={twitterIcono} width="35"></img>
+              </a>
+              </NavItemBtn>
+              &nbsp;  &nbsp;
+              <NavItemBtn >
+              <a href="https://t.me/Ethclusives">
+                <img className="spring" Src={telegramIcono} width="35"></img>
+              </a>
               </NavItemBtn>
             </NavMenu>
           </NavbarContainer>
         </Nav>
-      </IconContext.Provider>
-      
-    </Router>
+    
+      </Router>
+
   );
 }
 
