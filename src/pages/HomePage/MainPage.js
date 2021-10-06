@@ -8,8 +8,7 @@ function MainPage(){
     return(
         <>
 
-            <GlobalStyle/>
-            <ScrollToTop/>
+     
             <NavBar/>
             <Home/>
         </>

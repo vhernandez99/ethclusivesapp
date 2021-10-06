@@ -41,10 +41,6 @@ import {
 } from '../../components/InfoSection/InfoSection.elements';
 
 function Navbar() {
-  
-
-
-
   const dispatch = useDispatch();
   const blockchain = useSelector((state) => state.blockchain);
   const [click, setClick] = useState(false);
@@ -57,8 +53,9 @@ function Navbar() {
     }
   };
   const [show, setShow] = useState(true)
+  console.log(window.scrollY);
     const controlNavbar = () => {
-        if (window.scrollY > 10) {
+        if (window.scrollY >= 5) {
             setShow(false)
         } else {
             setShow(true)
@@ -72,7 +69,7 @@ function Navbar() {
     }, [])
     return (
      
-      <Router>
+
        <div className={`nav ${show && 'nav__blue'}`}>
         <NavbarContainer>
           <ImgWrapper JustifyContent="Start"
@@ -109,7 +106,7 @@ function Navbar() {
           </NavMenu>
         </NavbarContainer>
         </div>
-    </Router>
+
     
     )
   

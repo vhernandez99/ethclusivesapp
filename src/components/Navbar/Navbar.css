@@ -24,13 +24,15 @@ input[type=button].spring {
   }
 
 .nav{
-    height:30px;
-    width: 100%;
-    position:fixed;
-    display: none;
-    top:0;
-    transition-timing-function: ease-in;
-    transition:1s;   
+  height:30px;
+  width: 100%;
+  transition-timing-function: ease-in;
+  transition:0.5s;  
+  position:static;
+   display: none; 
+  top:0;
+
+   
 }
 
 .nav__blue{

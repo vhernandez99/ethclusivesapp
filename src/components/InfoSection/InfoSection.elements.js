@@ -8,10 +8,10 @@ export const InfoSec = styled.div`
 `;
 
 export const InfoRow = styled.div`
-  color: ${({ Color }) => (Color ? `${Color}` : 'transyarent')};
+  color: ${({ Color }) => (Color ? `${Color}` : 'red')};
   display: flex;
   
-  flex-wrap: wrap;
+  flex-wrap: nowrap;
   align-items: center;
   flex-direction: ${({ imgStart }) => (imgStart ? 'row-reverse' : 'row')};
 `;
@@ -21,9 +21,12 @@ export const InfoColumn = styled.div`
   padding-right: 15px;
   padding-left: 15px;
   flex: 1;
+  display: flex;
+  justify-content:end;
+  background:green;
   max-width: 50%;
   flex-basis: 50%;
-
+  
   @media screen and (max-width: 768px) {
     max-width: 100%;
     flex-basis: 100%;
@@ -59,16 +62,17 @@ export const TextWrapper = styled.div`
 export const ImgWrapper = styled.div`
   
   background: ${({ BackgroundColor}) => (BackgroundColor ? `${BackgroundColor}` : 'transparent')};
-  display: fixed;
+  display: flex;
   margin:${({Margin})=>(Margin ? `${Margin}px` : '0px')};
   margin-left:${({MarginLeft})=>(MarginLeft ? `${MarginLeft}px` : '0px')};
   margin-bottom:${({MarginBottom})=>(MarginBottom ? `${MarginBottom}px` : '0px')};
   margin-top:${({MarginTop})=>(MarginTop ? `${MarginTop}px` : '0px')};
   margin-right:${({MarginRight})=>(MarginRight ? `${MarginRight}px` : '0px')};
   justify-content:${({ JustifyContent}) => (JustifyContent ? `${JustifyContent}` : 'Center')};
-  align-items:center;
+  align-items:end;
   z-index: ${({Zindex})=>(Zindex ? `${Zindex}`: '0')};
-  position:${({Position})=>(Position?`${Position}` : 'relative')};
+  
+  position:${({Position})=>(Position?`${Position}` : 'static')};
   width:${({WidthPercentage})=>(WidthPercentage?`${WidthPercentage}` : '100%')};
 
 
