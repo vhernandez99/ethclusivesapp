@@ -9,9 +9,27 @@ import image5 from '../../images/Slider5.png'
 import image6 from '../../images/Slider6.png'
 import image7 from '../../images/Slider7.png'
 import { FaArrowRight, FaArrowLeft } from "react-icons/fa";
+import {
+  InfoSec,
+  InfoRow,
+  InfoColumn,
+  InfoColumnMintingQty,
+  TextWrapper,
+  TopLine,
+  Heading,
+  Subtitle,
+  ImgWrapper,
+  ImgWraperMargin,
+  Img,
+  Input,
+  ColoredLine
+
+} from '../InfoSection/InfoSection.elements';
 const images = [image1, image2, image3, image4,image5,image6,image7];
 
+
 function SliderC() {
+
   const NextArrow = ({ onClick }) => {
     return (
       <div className="arrow next" onClick={onClick}>
@@ -31,13 +49,18 @@ function SliderC() {
   const [imageIndex, setImageIndex] = useState(0);
   const small = window.matchMedia('(max-width: 600px)')
     const settings = {
-    
     infinite: true,
     lazyLoad: true,
     speed: 300,
     slidesToShow: 3,
     centerMode: true,
     centerPadding: 0,
+    autoplaySpeed:2000,
+    adaptiveHeight:1,
+    autoplay:1,
+    arrows:0,
+    // useTransform:1,
+    // useCSS:1,
     nextArrow: <NextArrow />,
     prevArrow: <PrevArrow />,
     beforeChange: (current, next) => setImageIndex(next),
@@ -47,10 +70,10 @@ function SliderC() {
       settings.slidesToShow=3; 
   }
   return (
-    <div className="App">
-      <Slider {...settings}>
+    <div>
+      <Slider {...settings}  style={{ width: 1200 }}>
         {images.map((img, idx) => (
-          <div className={idx === imageIndex ? "slide activeSlide" : "slide"}>
+          <div className={idx === imageIndex ? "slide activeSlide" : "slide"} >
             <img src={img} alt={img} />
           </div>
         ))}

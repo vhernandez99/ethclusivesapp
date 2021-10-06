@@ -6,27 +6,31 @@ import { Container } from '../../globalStyles';
 
 
 export const Nav = styled.nav`
-  background: transparent;
+  position: sticky;
   height: 80px;
-  display: flex;
+  display:flex;
+  /* display:${({Display})=>(Display ? `flex` : 'none')}; */
+  
   justify-content: center;
   align-items: center;
   font-size: 1.2rem;
-  position: sticky;
-  top: 0;
   z-index: 999;
+  top: 0;
+  
 `;
 
 export const NavbarContainer = styled(Container)`
   background:transparent;
-  display: flex;
+  display:${({Display})=>(Display ? `${Display}` : 'flex')};
   justify-content: space-between;
   height: 80px;
-
+  position: fixed;
+  
   ${Container}
 `;
 
 export const NavLogo = styled(Link)`
+  
   color: #fff;
   justify-self: auto;
   cursor: pointer;
@@ -96,6 +100,7 @@ export const NavItem = styled.li`
 
 export const NavItemBtn = styled.li`
   @media screen and (max-width: 960px) {
+    
     display: flex;
     justify-content: center;
     align-items: center;

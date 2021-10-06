@@ -42,11 +42,13 @@ import {
 
 function Navbar() {
   
+
+
+
   const dispatch = useDispatch();
   const blockchain = useSelector((state) => state.blockchain);
   const [click, setClick] = useState(false);
   const [button, setButton] = useState(true);
-
   const handleClick = () => setClick(!click);
   const closeMobileMenu = () => setClick(false);
   const getData = () => {
@@ -54,62 +56,63 @@ function Navbar() {
       dispatch(fetchData(blockchain.account));
     }
   };
-  const showButton = () => {
-    if (window.innerWidth <= 960) {
-      setButton(false);
-    } else {
-      setButton(true);
+  const [show, setShow] = useState(true)
+    const controlNavbar = () => {
+        if (window.scrollY > 10) {
+            setShow(false)
+        } else {
+            setShow(true)
+        }
     }
-  };
+    useEffect(() => {
+        window.addEventListener('scroll', controlNavbar)
+        return () => {
+            window.removeEventListener('scroll', controlNavbar)
+        }
+    }, [])
+    return (
+     
+      <Router>
+       <div className={`nav ${show && 'nav__blue'}`}>
+        <NavbarContainer>
+          <ImgWrapper JustifyContent="Start"
+          WidthPercentage="0"> 
+          <img src={logoLetras} height="40" width="170" />
+          </ImgWrapper>
+          <NavMenu>
+            <NavItemBtn>
+                <a>
+                  {blockchain.account === "" ||
+                  blockchain.smartContract === null ?(
+                  <img src={ connectButton} onClick={(e)=>{
+                    e.preventDefault();
+                    dispatch(connect());
+                    getData();
+                  }}></img>
+                ) : (
+                  <img src={ connectedButton}></img>
+                )}
+                    </a>
+            </NavItemBtn>
 
-  useEffect(() => {
-    showButton();
-  }, []);
-
-  window.addEventListener('resize', showButton);
-
-  return (
-<Router>
-        <Nav>
-          <NavbarContainer>
-            <ImgWrapper JustifyContent="Start"
-            WidthPercentage="0"> 
-            <img src={logoLetras} height="40" width="170" />
-            </ImgWrapper>
-            <NavMenu>
-              <NavItemBtn>
-                  <a>
-                    {blockchain.account === "" ||
-                    blockchain.smartContract === null ?(
-                    <img src={ connectButton} onClick={(e)=>{
-                      e.preventDefault();
-                      dispatch(connect());
-                      getData();
-                    }}></img>
-                  ) : (
-                    <img src={ connectedButton}></img>
-                  )}
-                      </a>
-              </NavItemBtn>
-
-              <NavItemBtn >
-              <a href="https://twitter.com/Ethclusive_Art">
-                <img className="spring" Src={twitterIcono} width="35"></img>
-              </a>
-              </NavItemBtn>
-              &nbsp;  &nbsp;
-              <NavItemBtn >
-              <a href="https://t.me/Ethclusives">
-                <img className="spring" Src={telegramIcono} width="35"></img>
-              </a>
-              </NavItemBtn>
-            </NavMenu>
-          </NavbarContainer>
-        </Nav>
+            <NavItemBtn >
+            <a href="https://twitter.com/Ethclusive_Art">
+              <img className="spring" Src={twitterIcono} width="35"></img>
+            </a>
+            </NavItemBtn>
+            &nbsp;  &nbsp;
+            <NavItemBtn >
+            <a href="https://t.me/Ethclusives">
+              <img className="spring" Src={telegramIcono} width="35"></img>
+            </a>
+            </NavItemBtn>
+          </NavMenu>
+        </NavbarContainer>
+        </div>
+    </Router>
     
-      </Router>
-
-  );
+    )
+  
 }
 
 export default Navbar;

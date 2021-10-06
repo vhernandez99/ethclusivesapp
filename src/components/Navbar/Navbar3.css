@@ -1,0 +1,14 @@
+.nav{
+    height:30px;
+    width: 100%;
+    position:fixed;
+    top:0;
+    transition-timing-function: ease-in;
+    transition:0.5s;
+    background: transparent;
+    
+}
+
+.nav__blue{
+    background-color:blue;
+}

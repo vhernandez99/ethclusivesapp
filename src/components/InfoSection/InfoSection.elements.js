@@ -8,7 +8,7 @@ export const InfoSec = styled.div`
 `;
 
 export const InfoRow = styled.div`
-  background: ${({ black }) => (black ? 'black' : 'transparent')};
+  color: ${({ Color }) => (Color ? `${Color}` : 'transyarent')};
   display: flex;
   
   flex-wrap: wrap;
@@ -57,9 +57,9 @@ export const TextWrapper = styled.div`
 `;
 
 export const ImgWrapper = styled.div`
-  background: ${({ BackgroundColor}) => (BackgroundColor ? `${BackgroundColor}` : 'transparent')};
   
-  display: flex;
+  background: ${({ BackgroundColor}) => (BackgroundColor ? `${BackgroundColor}` : 'transparent')};
+  display: fixed;
   margin:${({Margin})=>(Margin ? `${Margin}px` : '0px')};
   margin-left:${({MarginLeft})=>(MarginLeft ? `${MarginLeft}px` : '0px')};
   margin-bottom:${({MarginBottom})=>(MarginBottom ? `${MarginBottom}px` : '0px')};
@@ -69,7 +69,7 @@ export const ImgWrapper = styled.div`
   align-items:center;
   z-index: ${({Zindex})=>(Zindex ? `${Zindex}`: '0')};
   position:${({Position})=>(Position?`${Position}` : 'relative')};
-  width:100%;
+  width:${({WidthPercentage})=>(WidthPercentage?`${WidthPercentage}` : '100%')};
 
 
   
@@ -145,3 +145,5 @@ export const Subtitle = styled.p`
   //line-height: 24px;
   color: ${({ lightTextDesc,pinkColor }) => (lightTextDesc ? '#a9b3c1' : '#1c2237', pinkColor ?'#FE8CED': '')};
 `;
+
+

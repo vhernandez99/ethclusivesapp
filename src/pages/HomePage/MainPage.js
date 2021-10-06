@@ -7,6 +7,7 @@ import NavBar from '../../components/Navbar/Navbar';
 function MainPage(){
     return(
         <>
+
             <GlobalStyle/>
             <ScrollToTop/>
             <NavBar/>

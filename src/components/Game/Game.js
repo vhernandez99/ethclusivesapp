@@ -335,10 +335,10 @@ function IsCollision(a, b, paddingTop, paddingRight, paddingBottom, paddingLeft)
    
     </Container>
     
-    <ImgWrapper >
+    <ImgWrapper>
     <button className="ButtonRestart" onClick={Reset}>Restart</button>
     </ImgWrapper>
-    <ImgWrapper>
+    <ImgWrapper JustifyContent="end" MarginTop="150">
     <img src={Continue} onClick={() => history.push('/home')}></img>
     <img src={Click} width="50" Zindex="3"></img>
     </ImgWrapper>

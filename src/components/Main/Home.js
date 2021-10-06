@@ -4,8 +4,6 @@ import styled from "styled-components";
 import {Container, Button,Pinkcontainer } from '../../globalStyles';
 import minting from '../../images/minting.png'
 import mint from '../../images/mint.png'
-import logoGif from '../../images/Logo.gif'
-import logoLetras from '../../images/LogoLetras.png'
 import { connect } from "../../redux/blockchain/blockchainActions";
 import { fetchData } from "../../redux/data/dataActions";
 import Slider from "../ Slider/Slider";
@@ -23,7 +21,8 @@ import {
   ImgWrapper,
   ImgWraperMargin,
   Img,
-  Input
+  Input,
+  ColoredLine
 
 } from '../InfoSection/InfoSection.elements';
 function Home() {
@@ -70,11 +69,12 @@ function Home() {
   }, [blockchain.account]);
   return (
     <div className="main">
-      <ImgWrapper>
+      <ImgWrapper position="absolute">
           <img src="https://ethclusiveart.com/files/intro.gif" className="imgClass"
           loop="true"></img>
         </ImgWrapper>
-        <InfoRow black>
+      <hr className="ColorLine"/>
+        <InfoRow Color="Yellow">
           <InfoColumn>
             {claimingNft ?(
               <ImgWrapper start="flex-start">
@@ -121,17 +121,13 @@ function Home() {
                 </TopLine>
                 </InfoRow>
               </TextWrapper>
-              
             </Pinkcontainer>
-     
             <br/>
-            <hr color="#FF11FA" />
             <br/>
             <Pinkcontainer Big PinkColor>
               <TextWrapper>
                 <InfoRow>
                 <Input onChange={event=>SetMintValue(event.target.value)} disabled={blockchain.account=== "" || blockchain.smartContract===null ? 1: 0}>
-                    
                 </Input>
                 <TopLine textColor="Yellow">
                   5 Ethclusives max
@@ -142,15 +138,17 @@ function Home() {
             </Pinkcontainer>
             </Pinkcontainer>
           </InfoColumnMintingQty>
-          
+          <hr className="ColorLine"/>
         </InfoRow>
         <br/>
         <br/>
-        <Slider>
-          
-        </Slider>
+        <br/>
+        <ImgWrapper>
+          <Slider>
+          </Slider>
+        </ImgWrapper>
         
-
+        <hr className="ColorLine"/>
     </div>
   );
 }

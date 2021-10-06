@@ -1,0 +1,46 @@
+input[type=button].spring {
+    background: #ffd6c9;
+    border: 2px solid #e21818;
+    border-radius: 5px;
+    padding: 10px;
+    font-size: 16px;
+  }
+  input[type=button].spring:hover {
+    animation: none;
+  }
+  
+  @keyframes spring { 
+    0% { transform: scale(1) translateY(0); }
+    10% { transform: scale(1.2, 0.6); }
+    30% { transform: scale(0.8, 1.1) translateY(-10px); }
+    50% { transform: scale(1) translateY(0); }
+    100% { transform: translateY(0); }
+  }
+  
+  .spring:hover {
+    animation: spring 2s;
+    animation-timing-function: ease;
+    animation-iteration-count: infinite;
+  }
+
+.nav{
+    height:30px;
+    width: 100%;
+    position:fixed;
+    display: none;
+    top:0;
+    transition-timing-function: ease-in;
+    transition:1s;   
+}
+
+.nav__blue{
+  position: sticky;
+  height: 80px;
+  display:flex;
+  /* display:${({Display})=>(Display ? `flex` : 'none')}; */
+  justify-content: center;
+  align-items: center;
+  font-size: 1.2rem;
+  z-index: 999;
+  top: 0;
+} 

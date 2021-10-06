@@ -1,8 +1,14 @@
 
 .main{
-    background: black;
-
+    background: blac;
+    width: 100%;
     
+}
+.SliderContainer{
+    background: red;
+
+
+    max-width: 50%;
 }
 .imgClass{
 
@@ -16,3 +22,15 @@ object-fit: contain;
 }
 }
 
+.ColorLine{
+  
+    margin: auto;
+    margin-top: 50px;
+    margin-bottom: 50px;
+    background: white;
+    padding: 0.1px;
+    width: 68.3%;
+    
+   
+    
+}
