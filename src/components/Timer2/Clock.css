@@ -1,0 +1,12 @@
+@font-face {
+    font-family: 'Karma';
+    src: url(../../fonts/KarmaFuture.ttf) format('truetype');
+  }
+.font{
+    font-family: Karma;
+    font-size: 45px;
+    margin-bottom: 60px;
+    color: white;
+    
+}
+

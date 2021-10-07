@@ -1,17 +1,23 @@
+@font-face {
+  font-family: 'Karma';
+  src: url(../../fonts/KarmaFuture.ttf) format('truetype');
+}
+.font{
+font-family: Karma;
+}
 .timer {
     display: flex;
-    font-size: 20px;
+    font-size: 50px;
     justify-content: center;
   }
   .timer > div {
     padding: 10px;
-    background: #444;
+    background: transparent;
     color: #fff;
-    font-size: 30px;
-    margin-right: 2px;
-    width: 100px;
+    font-size: 50px;
+    width: 80px;
     display: flex;
-    justify-content: center;
+    justify-content: flex-start;
   }
   .timer > div > span {
     text-transform: uppercase;

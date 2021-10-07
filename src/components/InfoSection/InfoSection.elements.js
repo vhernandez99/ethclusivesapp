@@ -9,11 +9,20 @@ export const InfoSec = styled.div`
 
 export const InfoRow = styled.div`
   color: ${({ Color }) => (Color ? `${Color}` : 'red')};
+  background: ${({ BackgroundColor }) => (BackgroundColor ? `${BackgroundColor}` : 'transparent')};
   display: flex;
+  flex-wrap: nowwap;
+  justify-content:center;
+  align-items:  ${({ AlignItems }) => (AlignItems ? `${AlignItems}` : 'flex-start')};
+  margin-right:150px;
+  height:350px;
+  margin-left:${({ MarginLeft }) => (MarginLeft ? `${MarginLeft}px` : 0)};
+  margin-top:${({ MarginTop }) => (MarginTop ? `${MarginTop}px`: 0)};
+  margin-bottom:${({ MarginBottom }) => (MarginBottom ? `${MarginBottom}px`: 0)};
+  width:${({ WidthPercentage }) => (WidthPercentage ? `${WidthPercentage}px`: 'Auto')};
   
-  flex-wrap: nowrap;
-  align-items: center;
-  flex-direction: ${({ imgStart }) => (imgStart ? 'row-reverse' : 'row')};
+
+
 `;
 
 export const InfoColumn = styled.div`
@@ -22,6 +31,57 @@ export const InfoColumn = styled.div`
   padding-left: 15px;
   flex: 1;
   display: flex;
+  justify-content:end;
+  max-width: 50%;
+  flex-basis: 50%;
+  @media screen and (max-width: 768px) {
+    max-width: 100%;
+    flex-basis: 100%;
+    display: flex;
+    justify-content: center;
+  }
+`;
+
+export const InfoColumnVertical = styled.div`
+  margin-bottom: -8px;
+  border-width:1.5px;
+  border-style: solid;
+  border-color: #FF11FA;
+  border-radius:8px;
+  padding-right: 15px;
+  padding-left: 15px;
+  flex: 1;
+  display: flex;
+  flex-direction:column;
+  justify-content:end;
+  max-width: 450px;
+  margin-top:-30px;
+  flex-basis: 50%;
+  
+
+ 
+  
+  @media screen and (max-width: 768px) {
+    max-width: 100%;
+    flex-basis: 100%;
+    display: flex;
+    justify-content: center;
+  }
+`;
+
+export const InfoColumnVerticalEnd = styled.div`
+  margin-bottom: -8px;
+  border-width:0.1px;
+  border-style: solid;
+  border-color: #FF11FA;
+  border-radius:8px;
+  padding-right: 15px;
+  padding-left: 15px;
+  flex: 1;
+  display: flex;
+  
+  flex-direction:column;
+  align-items:flex-end;
   justify-content:end;
   background:green;
   max-width: 50%;
@@ -34,6 +94,8 @@ export const InfoColumn = styled.div`
     justify-content: center;
   }
 `;
+
+
 export const InfoColumnMintingQty = styled.div`
   background:black;
   padding-right:0px;
@@ -60,7 +122,6 @@ export const TextWrapper = styled.div`
 `;
 
 export const ImgWrapper = styled.div`
-  
   background: ${({ BackgroundColor}) => (BackgroundColor ? `${BackgroundColor}` : 'transparent')};
   display: flex;
   margin:${({Margin})=>(Margin ? `${Margin}px` : '0px')};
@@ -69,13 +130,11 @@ export const ImgWrapper = styled.div`
   margin-top:${({MarginTop})=>(MarginTop ? `${MarginTop}px` : '0px')};
   margin-right:${({MarginRight})=>(MarginRight ? `${MarginRight}px` : '0px')};
   justify-content:${({ JustifyContent}) => (JustifyContent ? `${JustifyContent}` : 'Center')};
-  align-items:end;
+  align-items:center;
   z-index: ${({Zindex})=>(Zindex ? `${Zindex}`: '0')};
-  
   position:${({Position})=>(Position?`${Position}` : 'static')};
   width:${({WidthPercentage})=>(WidthPercentage?`${WidthPercentage}` : '100%')};
-
-
+  height:${({HeightPx})=>(HeightPx?`${HeightPx}px` : 'auto')};
   
   
   
@@ -147,7 +206,8 @@ export const Subtitle = styled.p`
   //margin-bottom: 35px;
   font-size: 18px;
   //line-height: 24px;
-  color: ${({ lightTextDesc,pinkColor }) => (lightTextDesc ? '#a9b3c1' : '#1c2237', pinkColor ?'#FE8CED': '')};
+  color:black;
 `;
+
 
 

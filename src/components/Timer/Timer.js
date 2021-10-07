@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import './Timer.css'
 class Timer extends Component {
+  
   constructor(props) {
     super(props);
     this.countDownId = null;
@@ -62,21 +63,18 @@ class Timer extends Component {
     }
     return (
       <div className="timer">
-        <div>
-          {days}
-          <span>d</span>
+        <div className="font">
+          {days+":"}
         </div>
-        <div>
-          {hours}
-          <span>h</span>
+        <div className="font">
+          {hours+":"}
         </div>
-        <div>
-          {minutes}
-          <span>m</span>
+        <div className="font">
+          {minutes+":"}
         </div>
-        <div>
+        <div className="font">
           {seconds}
-          <span>s</span>
+          
         </div>
       </div>
     );

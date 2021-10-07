@@ -55,7 +55,7 @@ function SliderC() {
     slidesToShow: 3,
     centerMode: true,
     centerPadding: 0,
-    autoplaySpeed:2000,
+    autoplaySpeed:1500,
     adaptiveHeight:1,
     autoplay:1,
     arrows:0,

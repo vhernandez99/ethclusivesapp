@@ -6,8 +6,8 @@ import mint from '../../images/mint.png'
 import { useDispatch, useSelector } from "react-redux";
 import { fetchData } from "../../redux/data/dataActions";
 import Corner from '../../images/Corner.png'
-
-
+import Brain from '../../images/Brain.png'
+import Timer from '../../components/Timer2/Timer'
 import {
   InfoSec,
   InfoRow,
@@ -19,15 +19,17 @@ import {
   ImgWrapper,
   Img,
   InfoColumnMintingQty,
+  InfoColumnVertical,
   Input,
+  InfoColumnVerticalEnd,
   ImgWraperMargin
 } from '../../components/InfoSection/InfoSection.elements';
 import{
     Container,
-    
 }from '../../globalStyles'
 function Mint() {
-  const dispatch = useDispatch();
+  const startDate = new Date().getTime() +1634601600;
+  const dispatch = useDispatch ();
   const blockchain = useSelector((state) => state.blockchain);
   const data = useSelector((state) => state.data);
   const[mintValue, SetMintValue] = useState(0);
@@ -76,8 +78,8 @@ function Mint() {
             <img src={minting} width="450"></img>
             </ImgWrapper>
           ):(
-              <ImgWrapper start="flex-start">
-               <img src={mint} width="450"  onClick={(e) => {
+              <ImgWrapper start="flex-start" MarginTop="-150">
+               <img src={mint} width="550"  onClick={(e) => {
                     if(claimingNft|| blockchain.account===""||
                     blockchain.smartContract===null){
                         e.preventDefault();
@@ -94,9 +96,27 @@ function Mint() {
               </ImgWrapper>
           )}
           </InfoColumn>
-          <InfoColumn >
-              <img src={Corner}></img>
-          </InfoColumn>
+          <InfoColumnVertical> 
+              <ImgWrapper JustifyContent="end" WidthPercentage="80"> 
+              <img className="CornerFlag" src={Corner} width="50"></img>
+              </ImgWrapper>
+                    <ImgWrapper HeightPx="330" >
+                    <Timer/>
+                    </ImgWrapper>
+            
+            
+              {/* <Heading>Count yout counts</Heading>
+              <Subtitle>Enter the amount of Ethclusives you would like to purchase</Subtitle>
+              <InfoRow BackgroundColor="red">
+              <img src={Brain} width="50"></img>
+              <InfoColumnVertical>
+              <Subtitle>Price per Ethclusive NFT</Subtitle>
+              <Subtitle>Price per Ethclusive NFT</Subtitle>
+              <Subtitle>Price per Ethclusive NFT</Subtitle>
+              </InfoColumnVertical>
+              </InfoRow> */}
+          </InfoColumnVertical>
+         
             </InfoRow>
           
     
