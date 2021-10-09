@@ -29,7 +29,7 @@ export const NavbarContainer = styled(Container)`
   ${Container}
 `;
 
-export const NavLogo = styled(Link)`
+export const NavLogo = styled.div`
   
   color: #fff;
   justify-self: auto;

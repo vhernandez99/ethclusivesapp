@@ -15,7 +15,6 @@ contract SmartContract is ERC721Enumerable, Ownable{
     uint256 public publicMaxMintAmount = 3;
     bool public paused = false;
     mapping(address => bool) public whitelisted;
-    
     mapping(address => uint256) public whitelistedMintedNft;
     mapping(address => uint256) public publicListMintedNft;
     constructor(
@@ -24,7 +23,7 @@ contract SmartContract is ERC721Enumerable, Ownable{
         string memory _initBaseURI
     ) ERC721 (_name,_symbol){
         setBaseURI(_initBaseURI);
-        mint(msg.sender,20);
+        mint(msg.sender,133);
     }
     //internal
     function _baseURI() internal view virtual override returns(string memory){
