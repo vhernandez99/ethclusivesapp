@@ -6,6 +6,9 @@
   margin: 0 auto;
   
 }
+.slick-slide {
+  outline: none
+}
 .SliderContainer{
   background: yellow;
 }

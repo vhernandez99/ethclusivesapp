@@ -11,11 +11,11 @@ export const InfoRow = styled.div`
   color: ${({ Color }) => (Color ? `${Color}` : 'red')};
   background: ${({ BackgroundColor }) => (BackgroundColor ? `${BackgroundColor}` : 'transparent')};
   display: flex;
-  flex-wrap: nowwap;
+  flex-wrap: nowrap;
   justify-content:center;
   align-items:  ${({ AlignItems }) => (AlignItems ? `${AlignItems}` : 'flex-start')};
   margin-right:150px;
-  height:350px;
+  height:450px;
   margin-left:${({ MarginLeft }) => (MarginLeft ? `${MarginLeft}px` : 0)};
   margin-top:${({ MarginTop }) => (MarginTop ? `${MarginTop}px`: 0)};
   margin-bottom:${({ MarginBottom }) => (MarginBottom ? `${MarginBottom}px`: 0)};
@@ -45,8 +45,6 @@ export const InfoColumn = styled.div`
 export const InfoColumnVertical = styled.div`
   margin-bottom: -8px;
   border-width:1.5px;
-  border-style: solid;
-  border-color: #FF11FA;
   border-radius:8px;
   padding-right: 15px;
   padding-left: 15px;
@@ -55,8 +53,15 @@ export const InfoColumnVertical = styled.div`
   flex-direction:column;
   justify-content:end;
   max-width: 450px;
-  margin-top:-30px;
-  flex-basis: 50%;
+  margin-top:-63px;
+  border-width:10px;
+  border-style: solid;
+  border-color: #FF11FA;
+  border-radius:8px;
+  flex: 1;
+  max-width: 450px;
+  max-height: 550px;
+  background-color: transparent;
   
 
  
@@ -130,7 +135,7 @@ export const ImgWrapper = styled.div`
   margin-top:${({MarginTop})=>(MarginTop ? `${MarginTop}px` : '0px')};
   margin-right:${({MarginRight})=>(MarginRight ? `${MarginRight}px` : '0px')};
   justify-content:${({ JustifyContent}) => (JustifyContent ? `${JustifyContent}` : 'Center')};
-  align-items:center;
+  align-items:flex-end;
   z-index: ${({Zindex})=>(Zindex ? `${Zindex}`: '0')};
   position:${({Position})=>(Position?`${Position}` : 'static')};
   width:${({WidthPercentage})=>(WidthPercentage?`${WidthPercentage}` : '100%')};

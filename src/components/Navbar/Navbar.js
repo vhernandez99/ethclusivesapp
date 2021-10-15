@@ -87,7 +87,7 @@ function Navbar() {
                     getData();
                   }}></img>
                 ) : (
-                  <img src={ connectedButton}></img>
+                  <img src={ connectedButton} ></img>
                 )}
                     </a>
             </NavItemBtn>

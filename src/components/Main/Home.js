@@ -7,6 +7,7 @@ import Footer from "../../components/Footer/Footer"
 import Roadmap from "../../images/Roadmap.png"
 import EthFamily from "../../images/EthclusivesFamily.png";
 import Team from "../../images/Team.png";
+import intro from "../../images/MAINGIF.gif"
 import './Home.css'
 import {
   InfoSec,
@@ -24,7 +25,7 @@ function Home() {
   return (
     <div className="main">
       <ImgWrapper position="absolute">
-          <img src="https://ethclusiveart.com/files/intro.gif" className="imgClass"
+          <img src={intro} className="imgClass"
           loop="true"></img>
         </ImgWrapper>
       <hr className="ColorLine" color="#262626"/>

@@ -2,12 +2,10 @@ import React, { useState, useEffect,Component } from 'react';
 import { connect } from "../../redux/blockchain/blockchainActions";
 import './Mint.css'
 import minting from '../../images/minting.png'
+import MintingContainer from '../../components/Mint/MintContainer'
 import mint from '../../images/mint.png'
 import { useDispatch, useSelector } from "react-redux";
 import { fetchData } from "../../redux/data/dataActions";
-import Corner from '../../images/Corner.png'
-import Brain from '../../images/Brain.png'
-import Timer from '../../components/Timer2/Timer'
 import {
   InfoSec,
   InfoRow,
@@ -75,11 +73,11 @@ function Mint() {
             <InfoColumn>
           {claimingNft ?(
             <ImgWrapper start="flex-start">
-            <img src={minting} width="450"></img>
+            <img src={minting} width="750"></img>
             </ImgWrapper>
           ):(
               <ImgWrapper start="flex-start" MarginTop="-150">
-               <img src={mint} width="550"  onClick={(e) => {
+               <img src={mint} width="750"  onClick={(e) => {
                     if(claimingNft|| blockchain.account===""||
                     blockchain.smartContract===null){
                         e.preventDefault();
@@ -96,7 +94,16 @@ function Mint() {
               </ImgWrapper>
           )}
           </InfoColumn>
-          <InfoColumnVertical> 
+         
+          <MintingContainer/>
+         
+        
+         
+ 
+              
+        
+          
+          {/* <InfoColumnVertical> 
               <ImgWrapper JustifyContent="end" WidthPercentage="80"> 
               <img className="CornerFlag" src={Corner} width="50"></img>
               </ImgWrapper>
@@ -105,17 +112,9 @@ function Mint() {
                     </ImgWrapper>
             
             
-              {/* <Heading>Count yout counts</Heading>
-              <Subtitle>Enter the amount of Ethclusives you would like to purchase</Subtitle>
-              <InfoRow BackgroundColor="red">
-              <img src={Brain} width="50"></img>
-              <InfoColumnVertical>
-              <Subtitle>Price per Ethclusive NFT</Subtitle>
-              <Subtitle>Price per Ethclusive NFT</Subtitle>
-              <Subtitle>Price per Ethclusive NFT</Subtitle>
-              </InfoColumnVertical>
-              </InfoRow> */}
-          </InfoColumnVertical>
+              
+          </InfoColumnVertical> */}
+
          
             </InfoRow>
           

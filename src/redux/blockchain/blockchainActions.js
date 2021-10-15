@@ -51,7 +51,7 @@ export const connect = () => {
         if (networkId == 4) {
           const SmartContractObj = new Web3EthContract(
             SmartContract,
-            "0xd4A79CC802B776bbC4C9B15516c94ca77C5D9A55"
+            "0x19EA404c70C2598af90071Fa5D72D0096286F33F"
           );
           dispatch(
             connectSuccess({
@@ -69,7 +69,7 @@ export const connect = () => {
           });
           // Add listeners end
         } else {
-          dispatch(connectFailed("Change network to Polygon."));
+          dispatch(connectFailed("Change network to Ethereum"));
         }
       } catch (err) {
         dispatch(connectFailed("Something went wrong."));

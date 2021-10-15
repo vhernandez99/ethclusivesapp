@@ -1,6 +1,6 @@
 // SPDX-License-Identifier: MIT
 
-pragma solidity ^0.8.0;
+pragma solidity 0.8.9;
 
 import "@openzeppelin/contracts/token/ERC721/extensions/ERC721Enumerable.sol";
 import "@openzeppelin/contracts/access/Ownable.sol";
@@ -9,7 +9,8 @@ contract SmartContract is ERC721Enumerable, Ownable{
     using Strings for uint256;
     string public baseURI;
     string public baseExtension = ".json";
-    uint256 public cost = 0.02 ether;
+    uint256 public cost = 0.08 ether;
+    uint256 public whiteListedCost = 0.07 ether;
     uint256 public maxSupply = 10033;
     uint256 public whiteListMaxMintAmount = 5;
     uint256 public publicMaxMintAmount = 3;
@@ -39,18 +40,12 @@ contract SmartContract is ERC721Enumerable, Ownable{
             require(_mintAmount <= whiteListMaxMintAmount);
             require(whitelistedMintedNft[_to] + _mintAmount <= whiteListMaxMintAmount);
             whitelistedMintedNft[_to] += _mintAmount;
-            require(msg.value >= cost*_mintAmount);
+            require(msg.value >= whiteListedCost*_mintAmount);
             for(uint256 i=1; i<= _mintAmount; i++){
                 _safeMint(_to,supply + i);
             }
         }
         else if(owner() == msg.sender){
-            
-            /* Agregar la cantidad de nft que ya minteo a su cuenta?
-            if(_to!=owner()){
-                whitelistedMintedNft[_to] += _mintAmount;
-            } */
-            
             for(uint256 i=1; i<= _mintAmount; i++){
                 _safeMint(_to,supply + i);
             }
@@ -102,20 +97,28 @@ contract SmartContract is ERC721Enumerable, Ownable{
         
         function addListOfUsersToWhiteList(address [] calldata _user) public onlyOwner{
             for(uint256 i; i <_user.length; i++ ){
+                if(whitelisted[_user[i]]){
+                    continue;
+                }
                 whitelisted[_user[i]] = true;
             }
         }
         
         function removeListOfUsersFromWhiteList(address [] calldata _user) public onlyOwner{
             for(uint256 i; i <_user.length; i++ ){
+                if(!whitelisted[_user[i]]){
+                    continue;
+                }
                 whitelisted[_user[i]] = false;
             }
         }
         function addUserToWhiteList(address _user) public onlyOwner{
+            require(!(whitelisted[_user]),"User already in whitelist");
             whitelisted[_user] = true;
         }
         
         function removeUserFromWhiteList(address _user) public onlyOwner{
+            require((whitelisted[_user]),"User not in whitelist");
             whitelisted[_user] = false;
         }
         
