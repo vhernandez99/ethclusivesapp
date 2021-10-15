@@ -1,22 +1,29 @@
+@font-face {
+    font-family: 'LuckiestGuy';
+    src: url(../../fonts/LuckiestGuy-Regular.ttf) format('truetype');
+  }
+
+ .Title{
+    font-family: LuckiestGuy;
+    font-size: xx-large;
+    color: white;
+ }
+.PinkTitle{
+    font-family: LuckiestGuy;
+    font-size: xx-large;
+    color: #FF11FA;
+}
+.Subtitle{
+    font-family: LuckiestGuy;
+    font-size: large;
+    color: white;
+}
+.font2{
+    font-family: LuckiestGuy;
+    font-size: x-large;
+}
 body{
     background-color: rgb(24, 23, 23);
-    background-color: red;
-}
-
-.card-principal-container{
-  border-width:1.5px;
-  border-style: solid;
-  border-color: #FF11FA;
-  border-radius:8px;
-  flex: 1;
-  display: flex;
-  flex-direction:column;
-  justify-content:end;
-  max-width: 450px;
-  max-height: 550px;
-  background-color: yellow;
-    padding: 15px;
-
 }
 
 .card-secundary-container{
@@ -24,20 +31,26 @@ body{
     width: 100%;
 }
 
-.card-secundary-container h1{
-    font-size: 10rem;
-}
+
 
 .card-tirty-container{
-    width: 100%;
+    width: auto;
     padding: 2%;
-  
-    border-radius: 2%;
-    height: 70vh;
+    border-width:5px;
+    border-radius:8px;
+    flex: 1;
+    max-width: 450px;
+    margin-top: -50px;
+    border-style: solid;
+    border-color: #FF11FA;
+    max-height: 560px;
+    background-color: transparent;
 }
 
 .card-container-heading{
     display: flex;
+    max-height: 30%;
+    background-color: transparent;
 }
 
 .card-container-head1{
@@ -46,7 +59,7 @@ body{
 }
 
 .card-container-head2{
-    width: 25%;
+    background-color: transparent;
     margin-top: -40px;
 }
 
@@ -57,23 +70,10 @@ body{
     margin-top: 5%;
     margin-bottom: 5%;
     font-size: 1.4rem;
+
 }
 
-.container-price2 h1 span{
-    color: red;
-}
 
-.container-price2 h3{
-    margin: 0;
-}
-
-.container-price2 h1{
-    margin: 0;
-}
-
-.container-price2 h4{
-    margin: 0;
-}
 
 .card-container-total{
     border-top:1px solid white ;
@@ -81,12 +81,11 @@ body{
 }
 
 .btn{
-    background-color: black;
-  color: white;
-  font-size: 20px;
-  padding: 20px ;
-  border-radius: 5px;
-  margin: 10px 0px;
+background-color: black;
+  color: #2DFF2B;
+  height: 80%;
+  font-size: 25px;
+  border-radius: 8px;
   width: 100%;
   cursor: pointer;
 }
@@ -100,9 +99,11 @@ body{
 
 .card-container-total2{
     margin-top: 5vh;
+    display: flex;
+    align-items: center;
     height: 10vh;
     min-width: 100%;
-    background-color: blueviolet;
+    
 }
 
 .container-price{
@@ -112,6 +113,7 @@ body{
     margin-bottom: 3vh;
     border: 1px solid rgba(255, 255, 255, 0.253);
     padding: 3%;
+
     border-radius: 10px;
 }
 
