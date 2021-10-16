@@ -1,6 +1,6 @@
 // SPDX-License-Identifier: MIT
 
-pragma solidity 0.8.9;
+pragma solidity 0.8.1;
 
 import "@openzeppelin/contracts/token/ERC721/extensions/ERC721Enumerable.sol";
 import "@openzeppelin/contracts/access/Ownable.sol";
@@ -14,7 +14,7 @@ contract SmartContract is ERC721Enumerable, Ownable{
     uint256 public maxSupply = 10033;
     uint256 public whiteListMaxMintAmount = 5;
     uint256 public publicMaxMintAmount = 3;
-    bool public paused = false;
+    bool public paused = true;
     mapping(address => bool) public whitelisted;
     mapping(address => uint256) public whitelistedMintedNft;
     mapping(address => uint256) public publicListMintedNft;

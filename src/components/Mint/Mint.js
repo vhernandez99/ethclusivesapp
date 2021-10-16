@@ -2,31 +2,17 @@ import React, { useState, useEffect,Component } from 'react';
 import { connect } from "../../redux/blockchain/blockchainActions";
 import './Mint.css'
 import minting from '../../images/minting.png'
-import MintingContainer from '../../components/Mint/MintContainer'
 import mint from '../../images/mint.png'
+import Corner from '../../images/Corner.png'
+import Brain from '../../images/Brain.png'
 import { useDispatch, useSelector } from "react-redux";
 import { fetchData } from "../../redux/data/dataActions";
 import {
-  InfoSec,
   InfoRow,
   InfoColumn,
-  TextWrapper,
-  TopLine,
-  Heading,
-  Subtitle,
   ImgWrapper,
-  Img,
-  InfoColumnMintingQty,
-  InfoColumnVertical,
-  Input,
-  InfoColumnVerticalEnd,
-  ImgWraperMargin
 } from '../../components/InfoSection/InfoSection.elements';
-import{
-    Container,
-}from '../../globalStyles'
 function Mint() {
-  const startDate = new Date().getTime() +1634601600;
   const dispatch = useDispatch ();
   const blockchain = useSelector((state) => state.blockchain);
   const data = useSelector((state) => state.data);
@@ -42,10 +28,10 @@ function Mint() {
     blockchain.smartContract.methods
       .mint(blockchain.account, _amount)
       .send({
-        gasLimit: "285000",
-        to: "0x827acb09a2dc20e39c9aad7f7190d9bc53534192",
+        gasLimit: `${120000 + ((mintValue)* 180000)}`,
+        to: "0xb17dd1Bb5e906188fd830B0a199572Ade9deecBD",
         from: blockchain.account,
-        value: blockchain.web3.utils.toWei((0.08 * _amount).toString(), "ether"),
+        value: blockchain.web3.utils.toWei((0.07 * _amount).toString(), "ether"),
       })
       .once("error", (err) => {
         console.log(err);
@@ -71,13 +57,51 @@ function Mint() {
     return(
             <InfoRow>
             <InfoColumn>
-          {claimingNft ?(
-            <ImgWrapper start="flex-start">
-            <img src={minting} width="750"></img>
-            </ImgWrapper>
-          ):(
               <ImgWrapper start="flex-start" MarginTop="-150">
-               <img src={mint} width="750"  onClick={(e) => {
+               <img src={claimingNft ? minting : mint} width="750"  />
+              </ImgWrapper>
+          </InfoColumn>
+          <div class="card-tirty-container">
+          <div class="card-container-heading" >
+                    <div>
+                        <h1 className="PinkTitle">Ethclusives</h1>
+                        <h1 className="Subtitle">Whitelist can mint up to 5 Ethclusives</h1>
+                    </div>
+                    <div class="card-container-head2">
+                        <img src={Corner} alt="" width="90"/>
+                    </div>
+                </div>
+                <div class="card-container-price">
+                    <div class="container-price1">
+                        <img src={Brain}/>
+                    </div>
+                    <div class="container-price2">
+                        <h3 className="Subtitle">Price per Ethclusive</h3>
+                        <h3 className="Subtitle">0.07 ETH Each</h3>
+                        <br/>
+                        <h4 className="Subtitle">{blockchain.account===""||blockchain.smartContract===null?(
+                            "Connect to blockchain"
+                        ): `${10033-Number(data.totalSupply)} remaining!`}
+                        </h4>
+                    </div>
+                </div>
+                <div class="container-price">
+                    <input placeholder="0" disabled={blockchain.account=== "" || blockchain.smartContract===null ? 1: 0}  type="number" onChange={event=>SetMintValue(event.target.value)} 
+                    className="MintAmount" className="Subtitle">
+                    </input> 
+                    <h3 className="Subtitle">5 MAX</h3>
+                </div>
+                <div class="card-container-total">
+                    <br/>
+                    <div class="card-container-total1">
+                        <h3 className="Title">Total</h3>
+                        <h1 className="Title">{(mintValue*0.07).toFixed(2) } ETH</h1>
+                    </div>
+                    <br/>
+                </div>
+                <div class="card-container-total2">
+                   <button className="btn Subtitle"  
+                   onClick={(e) => {
                     if(claimingNft|| blockchain.account===""||
                     blockchain.smartContract===null){
                         e.preventDefault();
@@ -89,82 +113,11 @@ function Mint() {
                       e.preventDefault();
                       claimNFTs(mintValue);
                       getData();
-                    }}}>
-            </img>
-              </ImgWrapper>
-          )}
-          </InfoColumn>
-         
-          <MintingContainer/>
-         
-        
-         
- 
-              
-        
-          
-          {/* <InfoColumnVertical> 
-              <ImgWrapper JustifyContent="end" WidthPercentage="80"> 
-              <img className="CornerFlag" src={Corner} width="50"></img>
-              </ImgWrapper>
-                    <ImgWrapper HeightPx="330" >
-                    <Timer/>
-                    </ImgWrapper>
-            
-            
-              
-          </InfoColumnVertical> */}
-
-         
+                      
+                    }}}>Mint</button>
+                </div>
+          </div>
             </InfoRow>
-          
-    
-        // {/* <InfoColumnMintingQty>
-        //   <Pinkcontainer BigPadding BorderSquare> 
-        //   <TextWrapper>
-        //   <Heading blueText >
-        //     Buy your ethclusives!
-        //   </Heading>
-        //   <Subtitle pinkColor>Enter the amount of Ethclusives you would like to buy, whitelisted users can mint up to 8 Ethclusives (presale and public sale)</Subtitle>
-        //   </TextWrapper>
-        //   <Pinkcontainer Big PinkColor>
-        //     <TextWrapper>
-        //       <TopLine textColor="#08FAF6">
-        //         PRICE PER ETHCLUSIVE NFT 
-        //       </TopLine>
-        //       <InfoRow>
-        //       <Heading textColor="#08FAF6" paddingLeft="12">
-        //         0.08 &nbsp;   
-        //       </Heading>
-        //       <Heading>
-        //         ETH &nbsp; &nbsp;        
-        //       </Heading>
-        //       <TopLine textColor="Yellow" >
-        //         {10033-Number(data.totalSupply)} remaining!
-        //       </TopLine>
-        //       </InfoRow>
-        //     </TextWrapper>
-        //   </Pinkcontainer>
-        //   <br/>
-        //   <br/>
-        //   <Pinkcontainer Big PinkColor>
-        //     <TextWrapper>
-        //       <InfoRow>
-        //       <Input onChange={event=>SetMintValue(event.target.value)} disabled={blockchain.account=== "" || blockchain.smartContract===null ? 1: 0}>
-        //       </Input>
-        //       <TopLine textColor="Yellow">
-        //         5 Ethclusives max
-        //       </TopLine>
-        //       </InfoRow>
-        //     </TextWrapper>
-            
-        //   </Pinkcontainer>
-        //   </Pinkcontainer>
-        // </InfoColumnMintingQty> */}
-        // <hr className="ColorLine"/>
-      
-    
-    
     );
    }
 

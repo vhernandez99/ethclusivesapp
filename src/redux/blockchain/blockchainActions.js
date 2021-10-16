@@ -31,7 +31,6 @@ const updateAccountRequest = (payload) => {
     payload: payload,
   };
 };
-
 export const connect = () => {
   return async (dispatch) => {
     dispatch(connectRequest());
@@ -48,10 +47,10 @@ export const connect = () => {
           method: "net_version",
         });
         // const NetworkData = await SmartContract.networks[networkId];
-        if (networkId == 4) {
+        if (networkId == 1) {
           const SmartContractObj = new Web3EthContract(
             SmartContract,
-            "0x19EA404c70C2598af90071Fa5D72D0096286F33F"
+            "0xb17dd1Bb5e906188fd830B0a199572Ade9deecBD"
           );
           dispatch(
             connectSuccess({
