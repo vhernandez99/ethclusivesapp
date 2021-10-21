@@ -9,25 +9,7 @@ import image5 from '../../images/Slider5.png'
 import image6 from '../../images/Slider6.png'
 import image7 from '../../images/Slider7.png'
 import { FaArrowRight, FaArrowLeft } from "react-icons/fa";
-import {
-  InfoSec,
-  InfoRow,
-  InfoColumn,
-  InfoColumnMintingQty,
-  TextWrapper,
-  TopLine,
-  Heading,
-  Subtitle,
-  ImgWrapper,
-  ImgWraperMargin,
-  Img,
-  Input,
-  ColoredLine
-
-} from '../InfoSection/InfoSection.elements';
 const images = [image1, image2, image3, image4,image5,image6,image7];
-
-
 function SliderC() {
 
   const NextArrow = ({ onClick }) => {
