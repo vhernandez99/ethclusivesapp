@@ -94,7 +94,7 @@ export const NavItem = styled.li`
 
 export const NavItemBtn = styled.li`
   @media screen and (max-width: 960px) {
-    
+    background-color:red;
     display: flex;
     justify-content: center;
     align-items: center;

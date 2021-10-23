@@ -1,52 +1,28 @@
 import React, { useState, useEffect,Component } from 'react';
-import { FaBars, FaTimes } from 'react-icons/fa';
-import { IconContext } from 'react-icons/lib';
-import { Button,Container,LinkA } from '../../globalStyles';
-import logoGif from '../../images/ethclusive.gif'
 import logoLetras from '../../images/LogoLetras.png'
 import telegramIcono from '../../images/telegram.png'
+import discordIcono from '../../images/discord.png'
 import twitterIcono from '../../images/twitter.png'
 import connectButton from '../../images/connectButton.png'
 import connectedButton from '../../images/connectedButton.png'
 import { connect } from "../../redux/blockchain/blockchainActions";
 import { fetchData } from "../../redux/data/dataActions";
-import { Link, useHistory } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
-import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 import './Navbar.css'
 
 import {
-  Nav,
   NavbarContainer,
-  NavLogo,
-  NavIcon,
-  NavLink,
-  MobileIcon,
   NavMenu,
-  NavItem,
   NavItemBtn,
-  NavLinks,
-  NavBtnLink
+  NavLogo,
 } from './Navbar.elements';
 import {
-  InfoSec,
-  InfoRow,
-  InfoColumn,
-  TextWrapper,
-  TopLine,
-  Heading,
-  Subtitle,
   ImgWrapper,
-  Img
 } from '../../components/InfoSection/InfoSection.elements';
 
 function Navbar() {
   const dispatch = useDispatch();
   const blockchain = useSelector((state) => state.blockchain);
-  const [click, setClick] = useState(false);
-  const [button, setButton] = useState(true);
-  const handleClick = () => setClick(!click);
-  const closeMobileMenu = () => setClick(false);
   const getData = () => {
     if (blockchain.account !== "" && blockchain.smartContract !== null) {
       dispatch(fetchData(blockchain.account));
@@ -72,10 +48,9 @@ function Navbar() {
 
        <div className={`nav ${show && 'nav__blue'}`}>
         <NavbarContainer>
-          <ImgWrapper JustifyContent="Start"
-          WidthPercentage="0"> 
+          <NavLogo> 
           <img src={logoLetras} height="40" width="170" />
-          </ImgWrapper>
+          </NavLogo>
           <NavMenu>
             <NavItemBtn>
                 <a>
@@ -101,6 +76,12 @@ function Navbar() {
             <NavItemBtn >
             <a href="https://t.me/Ethclusives">
               <img className="spring" Src={telegramIcono} width="35"></img>
+            </a>
+            </NavItemBtn>
+            &nbsp;  &nbsp;
+            <NavItemBtn >
+            <a href="https://discord.gg/x7pmhP9Zy8">
+              <img className="spring" Src={discordIcono} width="35"></img>
             </a>
             </NavItemBtn>
           </NavMenu>

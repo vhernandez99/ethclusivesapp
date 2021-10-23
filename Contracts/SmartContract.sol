@@ -1,9 +1,18 @@
-// SPDX-License-Identifier: MIT
+// File: contracts/Ethclusives.sol
+
+
 
 pragma solidity 0.8.1;
+/*
+███████╗████████╗██╗░░██╗░█████╗░██╗░░░░░██╗░░░██╗░██████╗██╗██╗░░░██╗███████╗░██████╗
+██╔════╝╚══██╔══╝██║░░██║██╔══██╗██║░░░░░██║░░░██║██╔════╝██║██║░░░██║██╔════╝██╔════╝
+█████╗░░░░░██║░░░███████║██║░░╚═╝██║░░░░░██║░░░██║╚█████╗░██║╚██╗░██╔╝█████╗░░╚█████╗░
+██╔══╝░░░░░██║░░░██╔══██║██║░░██╗██║░░░░░██║░░░██║░╚═══██╗██║░╚████╔╝░██╔══╝░░░╚═══██╗
+███████╗░░░██║░░░██║░░██║╚█████╔╝███████╗╚██████╔╝██████╔╝██║░░╚██╔╝░░███████╗██████╔╝
+╚══════╝░░░╚═╝░░░╚═╝░░╚═╝░╚════╝░╚══════╝░╚═════╝░╚═════╝░╚═╝░░░╚═╝░░░╚══════╝╚═════╝░
+*/
 
-import "@openzeppelin/contracts/token/ERC721/extensions/ERC721Enumerable.sol";
-import "@openzeppelin/contracts/access/Ownable.sol";
+
 
 contract SmartContract is ERC721Enumerable, Ownable{
     using Strings for uint256;
@@ -91,11 +100,11 @@ contract SmartContract is ERC721Enumerable, Ownable{
         }
         //only owner
         
-        function setCost(uint256 _newCost)public onlyOwner(){
+        function setCost(uint256 _newCost)external onlyOwner(){
             cost = _newCost;
         }
         
-        function addListOfUsersToWhiteList(address [] calldata _user) public onlyOwner{
+        function addListOfUsersToWhiteList(address [] calldata _user) external onlyOwner{
             for(uint256 i; i <_user.length; i++ ){
                 if(whitelisted[_user[i]]){
                     continue;
@@ -104,7 +113,7 @@ contract SmartContract is ERC721Enumerable, Ownable{
             }
         }
         
-        function removeListOfUsersFromWhiteList(address [] calldata _user) public onlyOwner{
+        function removeListOfUsersFromWhiteList(address [] calldata _user) external onlyOwner{
             for(uint256 i; i <_user.length; i++ ){
                 if(!whitelisted[_user[i]]){
                     continue;
@@ -112,21 +121,21 @@ contract SmartContract is ERC721Enumerable, Ownable{
                 whitelisted[_user[i]] = false;
             }
         }
-        function addUserToWhiteList(address _user) public onlyOwner{
+        function addUserToWhiteList(address _user) external onlyOwner{
             require(!(whitelisted[_user]),"User already in whitelist");
             whitelisted[_user] = true;
         }
         
-        function removeUserFromWhiteList(address _user) public onlyOwner{
+        function removeUserFromWhiteList(address _user) external onlyOwner{
             require((whitelisted[_user]),"User not in whitelist");
             whitelisted[_user] = false;
         }
         
-        function setWhiteListMaxMintAmount(uint256 _newmaxMintAmount) public onlyOwner(){
+        function setWhiteListMaxMintAmount(uint256 _newmaxMintAmount) external onlyOwner(){
             whiteListMaxMintAmount = _newmaxMintAmount;
         }
         
-        function setPublicMaxMintAmount(uint256 _newmaxMintAmount) public onlyOwner(){
+        function setPublicMaxMintAmount(uint256 _newmaxMintAmount) external onlyOwner(){
             publicMaxMintAmount = _newmaxMintAmount;
         }
         
@@ -139,7 +148,7 @@ contract SmartContract is ERC721Enumerable, Ownable{
         function pause(bool _state)public onlyOwner{
             paused = _state;
         }
-        function withdraw()public payable onlyOwner{
+        function withdraw()external payable onlyOwner{
             require(payable(msg.sender).send( address(this).balance));
         }
 }
